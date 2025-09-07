@@ -92,7 +92,7 @@ export function MediaBrowser({ type: initialType, onSelect }: MediaBrowserProps)
 
   return (
     <div className="w-full">
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+      <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'youtube' | 'unsplash' | 'upload')} className="w-full">
         <TabsList className="grid w-full grid-cols-3" data-testid="tabs-media-browser">
           <TabsTrigger value="youtube" data-testid="tab-youtube">
             <Youtube className="mr-2 h-4 w-4" />

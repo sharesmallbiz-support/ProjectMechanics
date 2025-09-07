@@ -282,7 +282,7 @@ export default function Blog() {
                                 </Badge>
                               </td>
                               <td className="p-4 text-muted-foreground" data-testid={`text-all-created-${post.id}`}>
-                                {new Date(post.createdAt).toLocaleDateString()}
+                                {post.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'N/A'}
                               </td>
                               <td className="p-4">
                                 <div className="flex gap-2">

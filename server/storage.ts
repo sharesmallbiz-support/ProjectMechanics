@@ -253,6 +253,7 @@ export class MemStorage implements IStorage {
     const user: User = { 
       ...insertUser, 
       id,
+      role: insertUser.role || "user",
       createdAt: new Date(),
     };
     this.users.set(id, user);
@@ -273,6 +274,11 @@ export class MemStorage implements IStorage {
     const program: Program = {
       ...insertProgram,
       id,
+      description: insertProgram.description || null,
+      status: insertProgram.status || "active",
+      startDate: insertProgram.startDate || null,
+      endDate: insertProgram.endDate || null,
+      managerId: insertProgram.managerId || null,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
@@ -315,6 +321,13 @@ export class MemStorage implements IStorage {
     const project: Project = {
       ...insertProject,
       id,
+      description: insertProject.description || null,
+      status: insertProject.status || "planning",
+      progress: insertProject.progress || 0,
+      programId: insertProject.programId || null,
+      managerId: insertProject.managerId || null,
+      startDate: insertProject.startDate || null,
+      endDate: insertProject.endDate || null,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
@@ -357,6 +370,12 @@ export class MemStorage implements IStorage {
     const task: Task = {
       ...insertTask,
       id,
+      description: insertTask.description || null,
+      status: insertTask.status || "todo",
+      priority: insertTask.priority || "medium",
+      projectId: insertTask.projectId || null,
+      assigneeId: insertTask.assigneeId || null,
+      dueDate: insertTask.dueDate || null,
       createdAt: new Date(),
       updatedAt: new Date(),
       completedAt: null,
@@ -405,6 +424,11 @@ export class MemStorage implements IStorage {
     const post: BlogPost = {
       ...insertPost,
       id,
+      excerpt: insertPost.excerpt || null,
+      featuredImage: insertPost.featuredImage || null,
+      tags: insertPost.tags || null,
+      authorId: insertPost.authorId || null,
+      published: insertPost.published !== undefined ? insertPost.published : false,
       publishedAt: insertPost.published ? new Date() : null,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -420,6 +444,7 @@ export class MemStorage implements IStorage {
     const updated: BlogPost = {
       ...post,
       ...update,
+      published: update.published !== undefined ? update.published : post.published,
       publishedAt: update.published && !post.publishedAt ? new Date() : post.publishedAt,
       updatedAt: new Date(),
     };
@@ -441,6 +466,9 @@ export class MemStorage implements IStorage {
     const comment: Comment = {
       ...insertComment,
       id,
+      authorId: insertComment.authorId || null,
+      postId: insertComment.postId || null,
+      parentId: insertComment.parentId || null,
       createdAt: new Date(),
     };
     this.comments.set(id, comment);
@@ -461,6 +489,8 @@ export class MemStorage implements IStorage {
     const media: Media = {
       ...insertMedia,
       id,
+      metadata: insertMedia.metadata || null,
+      uploaderId: insertMedia.uploaderId || null,
       createdAt: new Date(),
     };
     this.media.set(id, media);

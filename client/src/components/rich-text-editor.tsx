@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Bold, Italic, Underline, Youtube, Image, Upload } from "lucide-react";
-import { MediaBrowser } from "./media-browser";
+import { MediaBrowser } from "@/components/media-browser";
 
 interface RichTextEditorProps {
   content: string;

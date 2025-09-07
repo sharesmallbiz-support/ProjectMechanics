@@ -26,7 +26,7 @@ export default function BlogPost() {
         content: newComment,
         postId: post.id,
         authorId: 'current-user', // In a real app, this would come from auth context
-        parentId: null,
+        parentId: undefined,
       });
       setNewComment('');
       toast({
@@ -248,7 +248,7 @@ export default function BlogPost() {
                             {comment.authorId}
                           </span>
                           <span className="text-sm text-muted-foreground" data-testid={`text-comment-date-${comment.id}`}>
-                            {new Date(comment.createdAt).toLocaleDateString()}
+                            {comment.createdAt ? new Date(comment.createdAt).toLocaleDateString() : 'N/A'}
                           </span>
                         </div>
                         <p className="text-muted-foreground" data-testid={`text-comment-content-${comment.id}`}>
