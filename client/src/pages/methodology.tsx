@@ -164,6 +164,32 @@ export default function Methodology() {
             </p>
           </div>
           
+          {/* Project Life Cycle Visual Overview */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-20">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-6" data-testid="text-lifecycle-states-diagram">
+                Project States Overview
+              </h3>
+              <img 
+                src="/attached_assets/MarkHazleton-Project-Life-Cycle_1757354804021.jpg" 
+                alt="Project Life Cycle States Diagram showing the circular flow of project states" 
+                className="w-full max-w-md mx-auto rounded-xl shadow-lg" 
+                data-testid="img-lifecycle-states"
+              />
+            </div>
+            <div className="text-center">
+              <h3 className="text-2xl font-bold mb-6" data-testid="text-lifecycle-sequence-diagram">
+                Project Life Cycle Flow
+              </h3>
+              <img 
+                src="/attached_assets/ProjectLifeCycle_SequenceDiagram_1757354804021.png" 
+                alt="Project Life Cycle Sequence Diagram showing decision points and flow paths" 
+                className="w-full max-w-lg mx-auto rounded-xl shadow-lg bg-white p-4" 
+                data-testid="img-lifecycle-sequence"
+              />
+            </div>
+          </div>
+          
           <div className="space-y-8">
             {projectLifeCycle.states.map((state, index) => (
               <Card key={index} className="bg-card rounded-xl p-8 border border-border hover:shadow-lg transition-shadow" data-testid={`lifecycle-state-${index}`}>
