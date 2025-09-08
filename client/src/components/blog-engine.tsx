@@ -60,9 +60,9 @@ export function BlogEngine() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <img 
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&h=40" 
-                      alt="Author profile photo" 
-                      className="w-8 h-8 rounded-full mr-2" 
+                      src="/attached_assets/MarkHazleton_1757354250316.jpg" 
+                      alt="Mark Hazleton profile photo" 
+                      className="w-8 h-8 rounded-full mr-2 object-cover" 
                       data-testid={`img-blog-author-${post.id}`}
                     />
                     <span className="text-sm text-muted-foreground" data-testid={`text-blog-author-${post.id}`}>

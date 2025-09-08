@@ -202,9 +202,9 @@ export default function Methodology() {
                   <div className="flex items-center space-x-4 mb-8">
                     <div className="flex items-center">
                       <img 
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&h=60" 
+                        src="/attached_assets/MarkHazleton_1757354250316.jpg" 
                         alt="Mark Hazleton profile photo" 
-                        className="w-12 h-12 rounded-full mr-3" 
+                        className="w-12 h-12 rounded-full mr-3 object-cover" 
                         data-testid="img-methodology-author"
                       />
                       <div>
