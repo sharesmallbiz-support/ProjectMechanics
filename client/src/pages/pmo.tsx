@@ -94,10 +94,10 @@ export default function PMO() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6" data-testid="text-pmo-hero-title">
-              Project Management <span className="text-yellow-300">Office</span>
+              Project Mechanics <span className="text-yellow-300">Tools</span>
             </h1>
             <p className="text-lg lg:text-xl opacity-90 mb-8 leading-relaxed max-w-4xl mx-auto" data-testid="text-pmo-hero-description">
-              Comprehensive project management office application with program management, task tracking, and status reporting capabilities.
+              Open tools and resources for implementing Project Mechanics methodology — practical templates, dashboards, and frameworks to help you manage projects effectively.
             </p>
           </div>
         </div>

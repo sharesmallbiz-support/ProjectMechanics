@@ -19,20 +19,22 @@ export function Navigation() {
                 <a className="nav-link text-muted-foreground font-medium">Methodology</a>
               </Link>
               <Link href="/pmo" data-testid="link-pmo">
-                <a className="nav-link text-muted-foreground font-medium">PMO Application</a>
+                <a className="nav-link text-muted-foreground font-medium">Tools & Resources</a>
               </Link>
               <Link href="/blog" data-testid="link-blog">
-                <a className="nav-link text-muted-foreground font-medium">Blog Engine</a>
+                <a className="nav-link text-muted-foreground font-medium">Knowledge Hub</a>
               </Link>
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Button 
-              className="bg-primary text-primary-foreground px-6 py-2 rounded-md font-medium hover:bg-primary/90 transition-colors"
-              data-testid="button-get-started"
-            >
-              Get Started
-            </Button>
+            <Link href="/methodology">
+              <Button 
+                className="bg-primary text-primary-foreground px-6 py-2 rounded-md font-medium hover:bg-primary/90 transition-colors"
+                data-testid="button-explore-framework"
+              >
+                Explore Framework
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

@@ -45,7 +45,7 @@ export function ResourcesSection() {
             Resources & Materials
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto" data-testid="text-resources-description">
-            Access comprehensive resources, templates, and materials to implement Project Mechanics in your organization.
+            Open educational resources, templates, and materials to help you learn and implement the Project Mechanics methodology — shared freely to advance project management knowledge.
           </p>
         </div>
 

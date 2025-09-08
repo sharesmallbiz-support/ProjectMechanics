@@ -61,10 +61,10 @@ export default function Blog() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6" data-testid="text-blog-hero-title">
-              Project Management <span className="text-yellow-300">Blog</span>
+              Knowledge <span className="text-yellow-300">Hub</span>
             </h1>
             <p className="text-lg lg:text-xl opacity-90 mb-8 leading-relaxed max-w-4xl mx-auto" data-testid="text-blog-hero-description">
-              Rich content creation tools with integrated media management for sharing project management insights and best practices.
+              Educational content, case studies, and insights from decades of real-world project experience — sharing knowledge to help you master the Project Mechanics methodology.
             </p>
           </div>
         </div>

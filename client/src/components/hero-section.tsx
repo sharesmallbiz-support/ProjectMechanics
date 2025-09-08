@@ -9,25 +9,27 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-              Master the <span className="text-yellow-300">Art and Science</span> of Project Management
+              Mastering the <span className="text-yellow-300">Art and Science</span> of Projects
             </h1>
             <p className="text-lg lg:text-xl opacity-90 mb-8 leading-relaxed">
-              Project Mechanics is a proven methodology that combines structured project management techniques with flexible, adaptive problem-solving approaches. Built on clear communication, efficient planning, and agile response to change.
+              Project Mechanics is a project management methodology built from decades of real-world experience. We blend structured discipline with adaptive problem-solving — sharing the mechanics so anyone can master projects, not selling consulting hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                className="bg-primary-foreground text-primary px-8 py-3 rounded-md font-semibold hover:bg-primary-foreground/90 transition-colors"
-                data-testid="button-explore-methodology"
-              >
-                Explore Methodology
-              </Button>
-              <Link href="/methodology" data-testid="link-watch-podcast">
+              <Link href="/methodology">
                 <Button 
                   className="bg-primary-foreground text-primary px-8 py-3 rounded-md font-semibold hover:bg-primary-foreground/90 transition-colors"
-                  data-testid="button-watch-podcast"
+                  data-testid="button-explore-methodology"
+                >
+                  Explore Methodology
+                </Button>
+              </Link>
+              <Link href="/blog" data-testid="link-learn-more">
+                <Button 
+                  className="bg-primary-foreground text-primary px-8 py-3 rounded-md font-semibold hover:bg-primary-foreground/90 transition-colors"
+                  data-testid="button-learn-more"
                 >
                   <Play className="mr-2 h-4 w-4" />
-                  Watch Podcast
+                  Learn More
                 </Button>
               </Link>
             </div>

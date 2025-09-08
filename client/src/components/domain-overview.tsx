@@ -7,40 +7,40 @@ export function DomainOverview() {
     {
       icon: Lightbulb,
       title: "Project Management Methodology",
-      description: "Discover the core principles of Project Mechanics, combining the art of communication with the science of structured project management.",
+      description: "Learn the core principles of Project Mechanics — a structured yet adaptive system built from decades of real-world project experience.",
       features: [
         "Art vs Mechanics Framework",
         "PMI Framework Integration", 
         "Communication Strategies",
         "Resource Materials"
       ],
-      buttonText: "Explore Methodology",
+      buttonText: "Learn the Framework",
       testId: "card-methodology"
     },
     {
       icon: ClipboardList,
-      title: "PMO Application",
-      description: "Comprehensive project management office application with program management, task tracking, and status reporting capabilities.",
+      title: "PMO Tools & Resources",
+      description: "Open tools and resources for implementing Project Mechanics methodology, including dashboards, templates, and tracking systems.",
       features: [
         "Programs & Projects Dashboard",
         "Task Management System",
         "Status Reporting Tools", 
         "Media Integration"
       ],
-      buttonText: "Access PMO Tools",
+      buttonText: "Explore Tools",
       testId: "card-pmo"
     },
     {
       icon: PenTool,
-      title: "Blog Engine",
-      description: "Rich content management system for sharing project management insights, case studies, and best practices with integrated media support.",
+      title: "Knowledge Hub",
+      description: "Educational content, case studies, and best practices shared from real-world project experience to help you master the methodology.",
       features: [
         "Rich Text Editor",
         "Category Management",
         "YouTube Integration",
         "Unsplash Photos"
       ],
-      buttonText: "Start Writing",
+      buttonText: "Access Knowledge",
       testId: "card-blog"
     }
   ];
@@ -50,10 +50,10 @@ export function DomainOverview() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" data-testid="text-domain-title">
-            Three Integrated Domains
+            A Framework for Project Success
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto" data-testid="text-domain-description">
-            Project Mechanics provides a comprehensive ecosystem for project management, from methodology to execution and knowledge sharing.
+            Project Mechanics is an educational platform and methodology hub that combines structured frameworks with practical knowledge sharing — built on experience, shared openly.
           </p>
         </div>
         

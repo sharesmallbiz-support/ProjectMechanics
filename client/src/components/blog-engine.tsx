@@ -18,10 +18,10 @@ export function BlogEngine() {
           <div className="flex justify-between items-center mb-8">
             <div className="text-left">
               <h2 className="text-3xl lg:text-4xl font-bold mb-4" data-testid="text-blog-title">
-                Blog Engine & Content Management
+                Knowledge Sharing Hub
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl" data-testid="text-blog-description">
-                Rich content creation tools with integrated media management for sharing project management insights and best practices.
+                Educational content, case studies, and real-world insights from decades of project experience — shared to help you master the Project Mechanics methodology.
               </p>
             </div>
             <Button className="flex items-center gap-2" data-testid="button-create-post">

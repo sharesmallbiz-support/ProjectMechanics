@@ -3,30 +3,30 @@ import { Cog } from "lucide-react";
 export function Footer() {
   const footerSections = [
     {
-      title: "Methodology",
+      title: "Learn",
       links: [
-        { name: "Art vs Mechanics", href: "#" },
-        { name: "Communication Framework", href: "#" },
-        { name: "PMI Integration", href: "#" },
-        { name: "Best Practices", href: "#" }
+        { name: "Methodology Overview", href: "/methodology" },
+        { name: "Project Management", href: "/methodology/project-management" },
+        { name: "Portfolio Management", href: "/methodology/portfolio-management" },
+        { name: "Leadership", href: "/methodology/leadership" }
       ]
     },
     {
-      title: "Tools", 
+      title: "Resources", 
       links: [
-        { name: "PMO Dashboard", href: "#" },
-        { name: "Project Tracking", href: "#" },
-        { name: "Task Management", href: "#" },
-        { name: "Reporting Tools", href: "#" }
-      ]
-    },
-    {
-      title: "Resources",
-      links: [
-        { name: "Documentation", href: "#" },
+        { name: "PMO Tools", href: "/pmo" },
         { name: "Templates", href: "#" },
-        { name: "Training Materials", href: "#" },
-        { name: "Blog Posts", href: "#" }
+        { name: "Frameworks", href: "#" },
+        { name: "Guides", href: "#" }
+      ]
+    },
+    {
+      title: "Community",
+      links: [
+        { name: "Knowledge Hub", href: "/blog" },
+        { name: "Case Studies", href: "#" },
+        { name: "Best Practices", href: "#" },
+        { name: "Discussions", href: "#" }
       ]
     }
   ];
@@ -47,7 +47,7 @@ export function Footer() {
               <h3 className="text-xl font-bold" data-testid="text-footer-brand">Project Mechanics</h3>
             </div>
             <p className="text-muted mb-6" data-testid="text-footer-description">
-              Mastering the art and science of project management through proven methodology and innovative tools.
+              A project management methodology built from real-world experience. Sharing the mechanics so anyone can master projects — an educational platform, not a consulting service.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
