@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/web-publishing-project-mechanics-logo_1757352141281.gif";
+import logoImage from "@assets/android-chrome-192x192_1757352839995.png";
 
 export function Navigation() {
   return (
