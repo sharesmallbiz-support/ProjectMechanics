@@ -22,8 +22,9 @@ export function HeroSection() {
               </Button>
               <Button 
                 variant="outline"
-                className="border border-primary-foreground text-primary-foreground px-8 py-3 rounded-md font-semibold hover:bg-primary-foreground hover:text-primary transition-colors"
+                className="border border-primary-foreground text-primary px-8 py-3 rounded-md font-semibold bg-primary-foreground/10 hover:bg-primary-foreground hover:text-primary transition-colors"
                 data-testid="button-watch-podcast"
+                onClick={() => document.getElementById('podcast-section')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Play className="mr-2 h-4 w-4" />
                 Watch Podcast

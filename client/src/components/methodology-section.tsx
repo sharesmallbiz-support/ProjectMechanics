@@ -72,7 +72,7 @@ export function MethodologySection() {
         </div>
 
         {/* Deep Dive Podcast Section */}
-        <Card className="bg-card rounded-xl p-8 border border-border">
+        <Card className="bg-card rounded-xl p-8 border border-border" id="podcast-section">
           <CardContent className="p-0">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
