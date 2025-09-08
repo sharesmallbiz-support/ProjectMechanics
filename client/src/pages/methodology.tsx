@@ -223,22 +223,18 @@ export default function Methodology() {
                 </div>
                 <div className="relative">
                   <div className="bg-black rounded-xl overflow-hidden aspect-video">
-                    <div className="relative">
-                      <img 
-                        src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450" 
-                        alt="Project Mechanics podcast video thumbnail" 
-                        className="w-full h-full object-cover" 
-                        data-testid="img-methodology-podcast-thumbnail"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Button 
-                          className="bg-red-600 hover:bg-red-700 text-white rounded-full w-20 h-20 flex items-center justify-center transition-colors"
-                          data-testid="button-methodology-play-video"
-                        >
-                          <Play className="w-8 h-8 ml-1" />
-                        </Button>
-                      </div>
-                    </div>
+                    <iframe 
+                      width="100%" 
+                      height="100%" 
+                      src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?si=kv9FmWXhm1OCRl23`}
+                      title="YouTube video player" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      referrerPolicy="strict-origin-when-cross-origin" 
+                      allowFullScreen
+                      className="rounded-xl"
+                      data-testid="iframe-methodology-podcast-video"
+                    />
                   </div>
                 </div>
               </div>
