@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import { Link } from "wouter";
 
 export function HeroSection() {
   return (
@@ -15,20 +16,20 @@ export function HeroSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                className="bg-primary-foreground text-primary px-8 py-3 rounded-md font-semibold hover:bg-opacity-90 transition-colors"
+                className="bg-primary-foreground text-primary px-8 py-3 rounded-md font-semibold hover:bg-primary-foreground/90 transition-colors"
                 data-testid="button-explore-methodology"
               >
                 Explore Methodology
               </Button>
-              <Button 
-                variant="outline"
-                className="border border-primary-foreground text-primary px-8 py-3 rounded-md font-semibold bg-primary-foreground/10 hover:bg-primary-foreground hover:text-primary transition-colors"
-                data-testid="button-watch-podcast"
-                onClick={() => document.getElementById('podcast-section')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                <Play className="mr-2 h-4 w-4" />
-                Watch Podcast
-              </Button>
+              <Link href="/methodology" data-testid="link-watch-podcast">
+                <Button 
+                  className="bg-primary-foreground text-primary px-8 py-3 rounded-md font-semibold hover:bg-primary-foreground/90 transition-colors"
+                  data-testid="button-watch-podcast"
+                >
+                  <Play className="mr-2 h-4 w-4" />
+                  Watch Podcast
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="relative">
