@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Cog } from "lucide-react";
+import logoImage from "@assets/web-publishing-project-mechanics-logo_1757352141281.gif";
 
 export function Navigation() {
   return (
@@ -10,7 +10,7 @@ export function Navigation() {
           <div className="flex items-center space-x-8">
             <Link href="/" data-testid="link-home">
               <div className="flex items-center">
-                <Cog className="text-primary text-2xl mr-3" />
+                <img src={logoImage} alt="Project Mechanics" className="h-8 w-auto mr-3" />
                 <h1 className="text-xl font-bold text-foreground">Project Mechanics</h1>
               </div>
             </Link>
