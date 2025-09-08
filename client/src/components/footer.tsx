@@ -33,7 +33,7 @@ export function Footer() {
 
   const socialLinks = [
     { name: "YouTube", icon: "📺", href: "#" },
-    { name: "LinkedIn", icon: "💼", href: "#" },
+    { name: "LinkedIn", icon: "💼", href: "https://www.linkedin.com/company/project-mechanics/" },
     { name: "Twitter", icon: "🐦", href: "#" }
   ];
 
