@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Palette, Cog, Youtube, Award, Users, Check, Play } from "lucide-react";
 import { METHODOLOGY_CONTENT, YOUTUBE_VIDEO_ID } from "@/lib/constants";
+import { Link } from "wouter";
 
 export default function Methodology() {
   const { overview, projectPortfolioManagement, benefitsOfConsistency, artVsScience, constituencies, projectLifeCycle, kickOffMeeting, pmiFramework } = METHODOLOGY_CONTENT;
@@ -23,6 +24,75 @@ export default function Methodology() {
             <p className="text-lg lg:text-xl opacity-90 mb-8 leading-relaxed max-w-4xl mx-auto" data-testid="text-methodology-hero-description">
               {overview.description}
             </p>
+            
+            {/* Sub-page Navigation */}
+            <div className="mt-12 max-w-5xl mx-auto">
+              <p className="text-base opacity-80 mb-6" data-testid="text-explore-sections">
+                Explore our comprehensive methodology sections:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                <Link href="/methodology/project-management">
+                  <Button 
+                    variant="outline" 
+                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                    data-testid="button-nav-project-management"
+                  >
+                    <div className="text-center">
+                      <div className="text-sm font-semibold">Project</div>
+                      <div className="text-sm">Management</div>
+                    </div>
+                  </Button>
+                </Link>
+                <Link href="/methodology/portfolio-management">
+                  <Button 
+                    variant="outline" 
+                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                    data-testid="button-nav-portfolio-management"
+                  >
+                    <div className="text-center">
+                      <div className="text-sm font-semibold">Portfolio</div>
+                      <div className="text-sm">Management</div>
+                    </div>
+                  </Button>
+                </Link>
+                <Link href="/methodology/change-management">
+                  <Button 
+                    variant="outline" 
+                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                    data-testid="button-nav-change-management"
+                  >
+                    <div className="text-center">
+                      <div className="text-sm font-semibold">Change</div>
+                      <div className="text-sm">Management</div>
+                    </div>
+                  </Button>
+                </Link>
+                <Link href="/methodology/conflict-management">
+                  <Button 
+                    variant="outline" 
+                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                    data-testid="button-nav-conflict-management"
+                  >
+                    <div className="text-center">
+                      <div className="text-sm font-semibold">Conflict</div>
+                      <div className="text-sm">Management</div>
+                    </div>
+                  </Button>
+                </Link>
+                <Link href="/methodology/leadership">
+                  <Button 
+                    variant="outline" 
+                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                    data-testid="button-nav-leadership"
+                  >
+                    <div className="text-center">
+                      <div className="text-sm font-semibold">Project</div>
+                      <div className="text-sm">Leadership</div>
+                    </div>
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
