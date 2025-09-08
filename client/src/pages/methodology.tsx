@@ -27,6 +27,66 @@ export default function Methodology() {
         </div>
       </section>
 
+      {/* Deep Dive Podcast Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="bg-card rounded-xl p-8 border border-border">
+            <CardContent className="p-0">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <Badge className="bg-red-100 text-red-800 mb-4" data-testid="badge-podcast">
+                    Featured Content
+                  </Badge>
+                  <h3 className="text-3xl font-bold mb-4" data-testid="text-methodology-podcast-title">
+                    Deep Dive: Project Mechanics Podcast
+                  </h3>
+                  <p className="text-muted-foreground mb-6 text-lg" data-testid="text-methodology-podcast-description">
+                    Join Mark Hazleton and the deep dive podcast team in their comprehensive discussion on Project Mechanics. Explore both the art and the science behind successful project execution with real-world examples and practical insights.
+                  </p>
+                  <div className="flex items-center space-x-4 mb-8">
+                    <div className="flex items-center">
+                      <img 
+                        src="/attached_assets/MarkHazleton_1757354250316.jpg" 
+                        alt="Mark Hazleton profile photo" 
+                        className="w-12 h-12 rounded-full mr-3 object-cover" 
+                        data-testid="img-methodology-author"
+                      />
+                      <div>
+                        <p className="font-semibold" data-testid="text-methodology-author-name">Mark Hazleton</p>
+                        <p className="text-sm text-muted-foreground" data-testid="text-methodology-author-subscribers">24 subscribers</p>
+                      </div>
+                    </div>
+                  </div>
+                  <Button 
+                    className="bg-red-600 text-white px-8 py-3 rounded-md font-medium hover:bg-red-700 transition-colors flex items-center text-lg"
+                    data-testid="button-methodology-watch-youtube"
+                  >
+                    <Youtube className="mr-3 h-5 w-5" />
+                    Watch Full Episode
+                  </Button>
+                </div>
+                <div className="relative">
+                  <div className="bg-black rounded-xl overflow-hidden aspect-video">
+                    <iframe 
+                      width="100%" 
+                      height="100%" 
+                      src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?si=kv9FmWXhm1OCRl23`}
+                      title="YouTube video player" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      referrerPolicy="strict-origin-when-cross-origin" 
+                      allowFullScreen
+                      className="rounded-xl"
+                      data-testid="iframe-methodology-podcast-video"
+                    />
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Project Portfolio Management Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -348,66 +408,6 @@ export default function Methodology() {
               </CardContent>
             </Card>
           </div>
-        </div>
-      </section>
-
-      {/* Deep Dive Podcast Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="bg-card rounded-xl p-8 border border-border">
-            <CardContent className="p-0">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <Badge className="bg-red-100 text-red-800 mb-4" data-testid="badge-podcast">
-                    Featured Content
-                  </Badge>
-                  <h3 className="text-3xl font-bold mb-4" data-testid="text-methodology-podcast-title">
-                    Deep Dive: Project Mechanics Podcast
-                  </h3>
-                  <p className="text-muted-foreground mb-6 text-lg" data-testid="text-methodology-podcast-description">
-                    Join Mark Hazleton and the deep dive podcast team in their comprehensive discussion on Project Mechanics. Explore both the art and the science behind successful project execution with real-world examples and practical insights.
-                  </p>
-                  <div className="flex items-center space-x-4 mb-8">
-                    <div className="flex items-center">
-                      <img 
-                        src="/attached_assets/MarkHazleton_1757354250316.jpg" 
-                        alt="Mark Hazleton profile photo" 
-                        className="w-12 h-12 rounded-full mr-3 object-cover" 
-                        data-testid="img-methodology-author"
-                      />
-                      <div>
-                        <p className="font-semibold" data-testid="text-methodology-author-name">Mark Hazleton</p>
-                        <p className="text-sm text-muted-foreground" data-testid="text-methodology-author-subscribers">24 subscribers</p>
-                      </div>
-                    </div>
-                  </div>
-                  <Button 
-                    className="bg-red-600 text-white px-8 py-3 rounded-md font-medium hover:bg-red-700 transition-colors flex items-center text-lg"
-                    data-testid="button-methodology-watch-youtube"
-                  >
-                    <Youtube className="mr-3 h-5 w-5" />
-                    Watch Full Episode
-                  </Button>
-                </div>
-                <div className="relative">
-                  <div className="bg-black rounded-xl overflow-hidden aspect-video">
-                    <iframe 
-                      width="100%" 
-                      height="100%" 
-                      src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?si=kv9FmWXhm1OCRl23`}
-                      title="YouTube video player" 
-                      frameBorder="0" 
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                      referrerPolicy="strict-origin-when-cross-origin" 
-                      allowFullScreen
-                      className="rounded-xl"
-                      data-testid="iframe-methodology-podcast-video"
-                    />
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
