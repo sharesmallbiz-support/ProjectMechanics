@@ -7,7 +7,7 @@ import { Palette, Cog, Youtube, Award, Users, Check, Play } from "lucide-react";
 import { METHODOLOGY_CONTENT, YOUTUBE_VIDEO_ID } from "@/lib/constants";
 
 export default function Methodology() {
-  const { artVsScience, constituencies, pmiFramework } = METHODOLOGY_CONTENT;
+  const { overview, projectPortfolioManagement, benefitsOfConsistency, artVsScience, constituencies, projectLifeCycle, kickOffMeeting, pmiFramework } = METHODOLOGY_CONTENT;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -21,8 +21,52 @@ export default function Methodology() {
               Project Management <span className="text-yellow-300">Methodology</span>
             </h1>
             <p className="text-lg lg:text-xl opacity-90 mb-8 leading-relaxed max-w-4xl mx-auto" data-testid="text-methodology-hero-description">
-              Discover the core principles of Project Mechanics, combining the art of communication with the science of structured project management for superior results.
+              {overview.description}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Portfolio Management Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6" data-testid="text-ppm-title">
+              {projectPortfolioManagement.title}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-12" data-testid="text-ppm-description">
+              {projectPortfolioManagement.description}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {projectPortfolioManagement.benefits.map((benefit, index) => (
+              <div key={index} className="flex items-start" data-testid={`ppm-benefit-${index}`}>
+                <Check className="text-green-600 mr-3 h-5 w-5 mt-1" />
+                <span className="text-muted-foreground">{benefit}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits of Consistency Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6" data-testid="text-consistency-title">
+              {benefitsOfConsistency.title}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-12" data-testid="text-consistency-description">
+              {benefitsOfConsistency.description}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {benefitsOfConsistency.advantages.map((advantage, index) => (
+              <div key={index} className="flex items-start" data-testid={`consistency-advantage-${index}`}>
+                <Check className="text-green-600 mr-3 h-5 w-5 mt-1" />
+                <span className="text-muted-foreground">{advantage}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -103,6 +147,104 @@ export default function Methodology() {
                   </p>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Project Life Cycle Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6" data-testid="text-lifecycle-title">
+              {projectLifeCycle.title}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-12" data-testid="text-lifecycle-description">
+              {projectLifeCycle.description}
+            </p>
+          </div>
+          
+          <div className="space-y-8">
+            {projectLifeCycle.states.map((state, index) => (
+              <Card key={index} className="bg-card rounded-xl p-8 border border-border hover:shadow-lg transition-shadow" data-testid={`lifecycle-state-${index}`}>
+                <CardContent className="p-0">
+                  <div className="grid lg:grid-cols-3 gap-8">
+                    <div>
+                      <div className="flex items-center mb-4">
+                        <div className="bg-primary/10 p-3 rounded-lg mr-4">
+                          <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold">
+                            {index + 1}
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-2xl font-bold" data-testid={`state-name-${index}`}>
+                            {state.name}
+                          </h3>
+                          {state.keyQuestion && (
+                            <p className="text-primary font-semibold italic" data-testid={`state-question-${index}`}>
+                              "{state.keyQuestion}"
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground font-medium mb-2" data-testid={`state-status-${index}`}>
+                        {state.status}
+                      </p>
+                    </div>
+                    
+                    <div className="lg:col-span-2">
+                      <p className="text-muted-foreground mb-6" data-testid={`state-description-${index}`}>
+                        {state.description}
+                      </p>
+                      
+                      {state.keyPoints && (
+                        <div className="mb-4">
+                          <h4 className="font-semibold mb-3">Key Points:</h4>
+                          <div className="space-y-2">
+                            {state.keyPoints.map((point, pointIndex) => (
+                              <div key={pointIndex} className="flex items-center" data-testid={`state-keypoint-${index}-${pointIndex}`}>
+                                <Check className="text-green-600 mr-3 h-4 w-4" />
+                                <span className="text-muted-foreground">{point}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      
+                      {state.deliverable && (
+                        <div className="bg-muted/50 p-4 rounded-lg border-l-4 border-primary">
+                          <h4 className="font-semibold mb-2">Key Deliverable:</h4>
+                          <p className="text-muted-foreground" data-testid={`state-deliverable-${index}`}>
+                            {state.deliverable}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Kick-Off Meeting Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6" data-testid="text-kickoff-title">
+              {kickOffMeeting.title}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-12" data-testid="text-kickoff-description">
+              {kickOffMeeting.description}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {kickOffMeeting.agenda.map((item, index) => (
+              <div key={index} className="flex items-start" data-testid={`kickoff-agenda-${index}`}>
+                <Check className="text-green-600 mr-3 h-5 w-5 mt-1" />
+                <span className="text-muted-foreground">{item}</span>
+              </div>
             ))}
           </div>
         </div>
