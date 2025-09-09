@@ -1,0 +1,32 @@
+
+Definitions
+Accountability (top)
+Accountability is when an individual is the ultimate point of responsibility for the successful completion of a task or assignment. In other words, "The buck stops here."
+Authority (top)
+For decisions to be made, authority must be granted to individuals. Authority is the power that enables individuals to provide directions and structure to others. The levels of authority should be well defined before any project effort, particularly when the organization participating in the effort utilizes a flat organization structure. In this case, individuals cannot defer to titles and established hierarchical structure to determine degrees of authority.
+Chargeability (top)
+The Chargeability percentage is the number of billable hours divided by a standard 40/hr week. (i.e. 40 hours billed is 100% chargeable, 20 hours is 50% chargeable)
+On-time (top)
+When deliverables are produced on the schedule communicated to the customer. This communicated time can be the original date, or a mutually determined revised date.
+Project Charter (top)
+A document to ensure that the project work plan lists all tasks necessary to deliver the scope of work that was sold. Ensure that the customer is referenceable during and after the project.
+Project End (top)
+A project ends when the mutually recognized solution has been reached, tested, reviewed, and finalized. Only after project-closing procedures have been completed does the project truly end.
+Project Management (top)
+Project Management is a set of principles, methods, and techniques for effectively planning, organizing, directing, and controlling projects.
+Project Mechanics (top)
+The purpose of Project Mechanics is to allow the project team to get a comprehensive view of the project. On this page you will find links to project documents and reports of the project requirements, issues, status, and time entry.
+Project Start (top)
+A project begins when a particular need is identified, and the necessity for further investigation of that need is authorized.
+Project Team (top)
+A Project Team is temporary organization comprised of varying resources. This organization is guided by a set of well-defined objectives and confined by a structure of cost, schedule, and quality parameters. Specifically, in the consulting environment a project will likely include both client and consultant personnel working together to achieve a well-defined objective intended to serve the client.
+Quality (top)
+To be considered a quality solution, a system must meet or exceed customer expectations in respect to its usability, scalability, and maintainability.
+Realization Rate (top)
+The Realization rate is a measure of the ability to get paid for recorded hours and takes into account hours that had to be written off. It is a dollar per hour number and calculated by taking the total dollars paid by the total hours charged to a project.
+Responsibility (top)
+The obligation incurred by individuals in their roles in formal organizations in order to effectively performs assignments. Ultimately, Project Managers are responsible for the work of all individuals performing tasks under their supervision, but each individual assigned a task has the specific responsibility for the attainment of a quality completion of the task.
+Utilization (top)
+The Utilization percentage is the total number of non-administrative hours against a standard. The use of utilization was to measure how much work a consultant is doing using both internal and external projects. You do not factor in Admin, Sick, or Vacation time into utilization.
+Within Budget (top)
+A project is within budget when costs do not exceed the previously agreed upon amount for delivery of the solution.

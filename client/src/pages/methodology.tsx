@@ -30,7 +30,7 @@ export default function Methodology() {
               <p className="text-base opacity-80 mb-6" data-testid="text-explore-sections">
                 Explore our comprehensive methodology sections:
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
                 <Link href="/methodology/project-management">
                   <Button 
                     variant="outline" 
@@ -88,6 +88,18 @@ export default function Methodology() {
                     <div className="text-center">
                       <div className="text-sm font-semibold">Project</div>
                       <div className="text-sm">Leadership</div>
+                    </div>
+                  </Button>
+                </Link>
+                <Link href="/methodology/glossary">
+                  <Button 
+                    variant="outline" 
+                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                    data-testid="button-nav-glossary"
+                  >
+                    <div className="text-center">
+                      <div className="text-sm font-semibold">Glossary</div>
+                      <div className="text-sm">& Terms</div>
                     </div>
                   </Button>
                 </Link>

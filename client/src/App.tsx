@@ -10,6 +10,7 @@ import PortfolioManagement from "@/pages/portfolio-management";
 import ChangeManagement from "@/pages/change-management";
 import ConflictManagement from "@/pages/conflict-management";
 import Leadership from "@/pages/leadership";
+import Glossary from "@/pages/glossary";
 import PMO from "@/pages/pmo";
 import Blog from "@/pages/blog";
 import BlogPost from "@/pages/blog-post";
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/methodology/change-management" component={ChangeManagement} />
       <Route path="/methodology/conflict-management" component={ConflictManagement} />
       <Route path="/methodology/leadership" component={Leadership} />
+      <Route path="/methodology/glossary" component={Glossary} />
       <Route path="/pmo" component={PMO} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
