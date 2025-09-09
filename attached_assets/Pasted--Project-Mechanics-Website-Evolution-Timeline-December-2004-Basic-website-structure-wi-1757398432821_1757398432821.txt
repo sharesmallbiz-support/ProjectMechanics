@@ -1,0 +1,97 @@
+# Project Mechanics Website Evolution Timeline
+
+## December 2004
+- **Basic website structure** with simple navigation
+- Core sections: Home, Project Mechanics, Guestbook, Site Map
+- Missing content indicated (Article ID 119 error)
+- Copyright: 2002-2004
+
+## February 2006 - August 2006
+- **Partnership with DeNovaCo** - site hosted under DeNovaCo branding
+- Expanded navigation with lifestyle categories (Offices, Adventure, Organizing, Projects, Living, Home Improvements, Learning, Fitness)
+- Enhanced project management focus with topic links
+- Added feature links for project lifecycle phases
+- Privacy Policy and Terms of Use introduced
+
+## September 2008 - December 2008
+- **Independent Project Mechanics LLC branding** returns
+- Founder Mark Hazleton prominently featured
+- Introduction of web publishing services focus
+- Case studies and portfolio websites showcased
+- Community and Resources sections established
+- Social media integration begins (LinkedIn, blog presence)
+
+## November 2010 - March 2011
+- **"Integrated And Distributed Web Publishing" becomes primary focus**
+- Real-time Twitter feed integration
+- Enhanced social media presence (Facebook Connect)
+- Web 2.0 features prominently displayed
+- Project management articles and resources expanded
+
+## May 2011 - January 2012
+- **Microsoft SharePoint integration** added as key service
+- Web Project Mechanics platform development
+- Continued Twitter buzz integration
+- Blog section enhanced with technical content
+- PMP certification highlighted
+
+## June 2013
+- **Streamlined design** with cleaner navigation
+- Social media feeds more integrated
+- Real-time analytics focus (Chartbeat)
+- Content marketing emphasis
+- Maintained core project management resources
+
+## November 2013 - February 2015
+- **Comprehensive project management resource hub**
+- Detailed navigation structure with multiple project phases
+- Enhanced leadership and communication sections
+- Video content integration
+- Amazon affiliate bookstore added
+- Professional certification (PMP) prominently featured
+
+## December 2015 - November 2016
+- **Modern responsive design** with toggle navigation
+- Expanded web publishing services
+- API development services added
+- Requirements analysis and design sections enhanced
+- Maintained comprehensive project management framework
+
+## June 2017
+- **Building Web APIs** service added
+- Further expansion of technical services
+- Continued focus on project management fundamentals
+- Enhanced case studies section
+
+## January 2019 - June 2019
+- **Technical transition period** - site becomes non-functional
+- JavaScript and cookies requirement message only
+- Possible platform migration or maintenance issues
+- End of active website presence
+
+## Key Evolution Themes:
+
+### Business Focus Shifts
+1. **2004-2005**: PM Portal vision - integrated project management tool
+2. **2006**: Partnership/hosting arrangement with DeNovaCo, lifestyle expansion
+3. **2006-2008**: Return to independent operations, theory-based consulting
+4. **2008-2011**: Web services integration with project management expertise
+5. **2011-2017**: Integrated web publishing and SharePoint specialization
+6. **2017-2019**: API development and technical services until site closure
+
+### Technical Evolution
+- **Early years**: Static HTML pages
+- **2010-2013**: Dynamic social media integration, real-time feeds
+- **2013-2017**: Responsive design, enhanced navigation
+- **2017+**: Modern web technologies, API focus
+
+### Content Strategy
+- **Consistent**: Project management fundamentals and PMP certification
+- **Evolving**: From basic consulting to integrated web publishing to technical services
+- **Community**: Increasing emphasis on social media and community building
+
+### Branding
+- **2002-2006**: Project Mechanics with various partnerships
+- **2006**: DeNovaCo partnership period
+- **2008+**: Independent Project Mechanics LLC with Mark Hazleton as founder
+- **Tagline consistency**: "Discover the mechanics of getting IT done" (with variations)
