@@ -18,12 +18,6 @@ export function Navigation() {
               <Link href="/methodology" data-testid="link-methodology">
                 <a className="nav-link text-muted-foreground font-medium">Methodology</a>
               </Link>
-              <Link href="/pmo" data-testid="link-pmo">
-                <a className="nav-link text-muted-foreground font-medium">Tools & Resources</a>
-              </Link>
-              <Link href="/blog" data-testid="link-blog">
-                <a className="nav-link text-muted-foreground font-medium">Knowledge Hub</a>
-              </Link>
             </div>
           </div>
           <div className="flex items-center space-x-4">
