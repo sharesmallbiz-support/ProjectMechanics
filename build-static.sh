@@ -3,7 +3,7 @@
 # This builds the static site to the /docs folder
 
 echo "Building static site for GitHub Pages..."
-vite build --outDir docs --base ./ --emptyOutDir
+vite build --outDir ../docs --base ./ --emptyOutDir
 
 echo "Build complete! The static site is in the /docs folder"
 echo "To deploy to GitHub Pages:"

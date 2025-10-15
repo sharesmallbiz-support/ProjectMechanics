@@ -39,11 +39,12 @@ The site includes comprehensive methodology pages:
 
 ### Build and Deployment
 - **Build Tool**: Vite with static site generation
-- **Build Command**: `npx vite build --outDir docs --base ./ --emptyOutDir`
-- **Build Script**: `./build-static.sh` for convenient static builds
-- **Output Directory**: `/docs` folder (GitHub Pages standard)
+- **Build Command**: `npx vite build --outDir ../docs --base ./ --emptyOutDir`
+- **Build Script**: `./build-static.sh` for convenient static builds (recommended)
+- **Output Directory**: `/docs` folder at project root (GitHub Pages standard)
 - **Base Path**: Relative (`./`) for GitHub Pages compatibility
 - **Assets**: All assets bundled with relative paths
+- **Preview Server**: Minimal Express server (`server/index.ts`) serves /docs folder for local testing
 
 ### GitHub Pages Configuration
 - **Publishing Source**: `/docs` folder on main branch
