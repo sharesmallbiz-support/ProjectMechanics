@@ -1,4 +1,4 @@
-import { Router, Route } from "wouter";
+import { Router, Route, Switch } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
@@ -10,22 +10,23 @@ import ConflictManagement from "@/pages/conflict-management";
 import Leadership from "@/pages/leadership";
 import Glossary from "@/pages/glossary";
 import History from "@/pages/history";
-import NotFound from "@/pages/not-found";
 
 function App() {
   return (
     <TooltipProvider>
       <Router hook={useHashLocation}>
-        <Route path="/" component={Home} />
-        <Route path="/methodology" component={Methodology} />
-        <Route path="/methodology/project-management" component={ProjectManagement} />
-        <Route path="/methodology/portfolio-management" component={PortfolioManagement} />
-        <Route path="/methodology/change-management" component={ChangeManagement} />
-        <Route path="/methodology/conflict-management" component={ConflictManagement} />
-        <Route path="/methodology/leadership" component={Leadership} />
-        <Route path="/methodology/glossary" component={Glossary} />
-        <Route path="/methodology/history" component={History} />
-        <Route component={NotFound} />
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/methodology" component={Methodology} />
+          <Route path="/methodology/project-management" component={ProjectManagement} />
+          <Route path="/methodology/portfolio-management" component={PortfolioManagement} />
+          <Route path="/methodology/change-management" component={ChangeManagement} />
+          <Route path="/methodology/conflict-management" component={ConflictManagement} />
+          <Route path="/methodology/leadership" component={Leadership} />
+          <Route path="/methodology/glossary" component={Glossary} />
+          <Route path="/methodology/history" component={History} />
+          <Route path="/:rest*" component={Home} />
+        </Switch>
       </Router>
     </TooltipProvider>
   );
