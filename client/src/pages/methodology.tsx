@@ -228,7 +228,7 @@ export default function Methodology() {
       {/* Art vs Science Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+          <div className="max-w-4xl mx-auto mb-16">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6" data-testid="text-art-science-title">
                 {artVsScience.title}
@@ -260,14 +260,6 @@ export default function Methodology() {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                alt="Project management workflow diagrams and charts" 
-                className="rounded-xl shadow-lg w-full h-auto" 
-                data-testid="img-art-science"
-              />
             </div>
           </div>
         </div>
