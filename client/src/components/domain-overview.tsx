@@ -20,14 +20,14 @@ export function DomainOverview() {
     {
       icon: ClipboardList,
       title: "PMO Tools & Resources",
-      description: "Open tools and resources for implementing Project Mechanics methodology, including dashboards, templates, and tracking systems.",
+      description: "Reference materials and conceptual frameworks for implementing Project Mechanics methodology in your organization.",
       features: [
-        "Programs & Projects Dashboard",
-        "Task Management System",
-        "Status Reporting Tools", 
-        "Media Integration"
+        "Framework Documentation",
+        "Process Templates",
+        "Best Practice Guides", 
+        "Implementation Roadmaps"
       ],
-      buttonText: "Explore Tools",
+      buttonText: "Explore Resources",
       testId: "card-pmo"
     },
     {
@@ -35,10 +35,10 @@ export function DomainOverview() {
       title: "Knowledge Hub",
       description: "Educational content, case studies, and best practices shared from real-world project experience to help you master the methodology.",
       features: [
-        "Rich Text Editor",
-        "Category Management",
-        "YouTube Integration",
-        "Unsplash Photos"
+        "Methodology Guides",
+        "Best Practices",
+        "Case Studies",
+        "Implementation Resources"
       ],
       buttonText: "Access Knowledge",
       testId: "card-blog"
@@ -53,7 +53,7 @@ export function DomainOverview() {
             A Framework for Project Success
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto" data-testid="text-domain-description">
-            Project Mechanics is an educational platform and methodology hub that combines structured frameworks with practical knowledge sharing — built on experience, shared openly.
+            Project Mechanics is a static educational resource providing structured project management frameworks and practical knowledge — built on experience, shared openly. No login required, no data collection, just pure knowledge.
           </p>
         </div>
         

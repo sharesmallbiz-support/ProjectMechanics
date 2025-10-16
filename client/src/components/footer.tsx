@@ -47,7 +47,7 @@ export function Footer() {
               <h3 className="text-xl font-bold" data-testid="text-footer-brand">Project Mechanics</h3>
             </div>
             <p className="text-muted mb-6" data-testid="text-footer-description">
-              A project management methodology built from real-world experience. Sharing the mechanics so anyone can master projects — an educational platform, not a consulting service.
+              A static educational resource for project management methodology built from real-world experience. Free, open access to frameworks and best practices — no login, no tracking, just knowledge.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (

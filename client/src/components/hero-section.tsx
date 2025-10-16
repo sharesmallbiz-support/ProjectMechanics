@@ -12,7 +12,7 @@ export function HeroSection() {
               Mastering the <span className="text-yellow-300">Art and Science</span> of Projects
             </h1>
             <p className="text-lg lg:text-xl opacity-90 mb-8 leading-relaxed">
-              Project Mechanics is a project management methodology built from decades of real-world experience. We blend structured discipline with adaptive problem-solving — sharing the mechanics so anyone can master projects, not selling consulting hours.
+              Project Mechanics is a comprehensive project management methodology built from decades of real-world experience. This static resource site provides free access to structured frameworks, best practices, and practical guidance — knowledge shared openly, no barriers, no login required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
