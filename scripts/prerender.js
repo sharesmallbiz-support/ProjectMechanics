@@ -1,12 +1,14 @@
 /**
- * Pre-render script for generating static HTML files
+ * Pre-render script for generating static HTML files with full React SSR
  * Runs after Vite build to create individual HTML files for each route
  */
 
-import { readFile, writeFile, mkdir } from 'fs/promises';
+import { readFile, writeFile } from 'fs/promises';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { JSDOM } from 'jsdom';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const docsDir = resolve(__dirname, '../docs');
