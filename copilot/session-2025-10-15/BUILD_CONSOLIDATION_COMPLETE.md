@@ -287,6 +287,7 @@ npm run build
 ```
 
 **Note:** The build configuration in `vite.config.ts` is set to always output to `/docs` folder.
+
 ```
 
 **Purpose:**
