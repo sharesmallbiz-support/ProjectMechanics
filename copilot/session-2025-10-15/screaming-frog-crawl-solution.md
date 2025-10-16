@@ -9,12 +9,14 @@
 ## 🔍 The Problem
 
 **Current Architecture:**
+
 - React Single Page Application (SPA) with hash routing (`/#/methodology`)
 - Client-side rendering - content loaded by JavaScript
 - HTML files exist but contain empty `<div id="root"></div>`
 - Screaming Frog can't execute JavaScript reliably
 
 **What Screaming Frog Sees:**
+
 ```html
 <body>
   <div id="root"></div>  <!-- Empty! -->
@@ -39,6 +41,7 @@
    - Upload your sitemap.xml or paste URLs
    - Mode → List → Paste/Upload
    - Add all your .html URLs:
+
      ```
      https://sharesmallbiz-support.github.io/ProjectMechanics/
      https://sharesmallbiz-support.github.io/ProjectMechanics/methodology.html
@@ -51,11 +54,13 @@
    - Should see all content
 
 **Pros:**
+
 - ✅ No code changes needed
 - ✅ Works with current setup
 - ✅ Quick solution
 
 **Cons:**
+
 - ❌ Requires Screaming Frog configuration each time
 - ❌ Real search engine crawlers may have similar issues
 - ❌ Not truly "static"
@@ -67,23 +72,27 @@
 **Created:** `client/public/sitemap-html.html`
 
 **Features:**
+
 - Human-readable sitemap
 - All 9 pages linked with descriptions
 - Crawlable by Screaming Frog and search engines
 - Static HTML (no JavaScript needed)
 
 **Usage:**
+
 - Access at: `https://sharesmallbiz-support.github.io/ProjectMechanics/sitemap-html.html`
 - Link from footer or main nav
 - Crawlers can follow all links
 
 **Pros:**
+
 - ✅ Works without JavaScript
 - ✅ Good for SEO
 - ✅ User-friendly backup navigation
 - ✅ Easy to maintain
 
 **Cons:**
+
 - ❌ Still doesn't render React content server-side
 - ❌ Crawlers see links but not page content
 
@@ -92,23 +101,27 @@
 ### Option 3: True Static Site Generation (SSG) - FUTURE
 
 **Would require:**
+
 1. Server-side rendering (SSR) setup
 2. Build-time rendering of all React components to HTML
 3. Hydration on client-side
 
 **Tools:**
+
 - Next.js `next export` (SSG mode)
 - Gatsby
 - Astro with React
 - Custom React SSR setup
 
 **Pros:**
+
 - ✅ Fully static HTML with content
 - ✅ Perfect SEO
 - ✅ No JavaScript needed for content
 - ✅ Progressive enhancement
 
 **Cons:**
+
 - ❌ Major refactoring required
 - ❌ Migration to different framework
 - ❌ More complex build process
@@ -120,6 +133,7 @@
 ### 1. Use Screaming Frog with JavaScript Rendering
 
 **Settings:**
+
 ```
 Configuration → Spider
 ├─ Rendering: JavaScript Enabled
@@ -147,18 +161,21 @@ Test: `https://sharesmallbiz-support.github.io/ProjectMechanics/sitemap.xml`
 ## 🧪 Testing Crawlability
 
 ### Test 1: Screaming Frog with JS Disabled
+
 ```
 Result: Only sees index.html
 Why: Empty <div id="root"></div>
 ```
 
 ### Test 2: Screaming Frog with JS Enabled
+
 ```
 Result: Should see all content after React renders
 Why: Executes JavaScript and waits for content
 ```
 
 ### Test 3: Using sitemap.xml in List Mode
+
 ```
 Result: Crawls all 9 URLs directly
 Why: Bypasses link discovery
@@ -169,6 +186,7 @@ Why: Bypasses link discovery
 ## 🎯 What Search Engines Do
 
 **Google:**
+
 - ✅ Executes JavaScript (Googlebot can render React)
 - ✅ Follows hash routes
 - ✅ Indexes client-side content
@@ -176,10 +194,12 @@ Why: Bypasses link discovery
 - ⚠️ Uses more resources
 
 **Bing:**
+
 - ⚠️ Limited JavaScript rendering
 - ✅ Better with static HTML
 
 **Other Search Engines:**
+
 - ❌ Often can't execute JavaScript
 - ❌ Need static HTML content
 
@@ -190,6 +210,7 @@ Why: Bypasses link discovery
 Add this `<noscript>` section to your HTML template for crawlers that don't run JavaScript:
 
 **In `client/index.html`:**
+
 ```html
 <body>
   <div id="root"></div>
@@ -254,6 +275,7 @@ After deploying:
 If SEO is critical and you want perfect crawlability:
 
 **Consider migrating to Next.js with Static Export:**
+
 - Generates true static HTML files with content
 - React components render at build time
 - Perfect SEO out of the box
