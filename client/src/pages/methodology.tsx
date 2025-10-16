@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,9 +7,14 @@ import { Badge } from "@/components/ui/badge";
 import { Palette, Cog, Youtube, Award, Users, Check, Play } from "lucide-react";
 import { METHODOLOGY_CONTENT, YOUTUBE_VIDEO_ID } from "@/lib/constants";
 import { Link } from "wouter";
+import { updatePageMetadata } from "@/lib/metadata";
 
 export default function Methodology() {
   const { overview, projectPortfolioManagement, benefitsOfConsistency, artVsScience, constituencies, projectLifeCycle, kickOffMeeting, pmiFramework } = METHODOLOGY_CONTENT;
+
+  useEffect(() => {
+    updatePageMetadata("methodology");
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">

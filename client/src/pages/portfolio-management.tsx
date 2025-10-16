@@ -1,11 +1,17 @@
+import { useEffect } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowLeft, Target, TrendingUp, Users, Building, UserCheck, BarChart3, Zap, Shield, Globe, Headphones, Presentation } from "lucide-react";
 import { Link } from "wouter";
+import { updatePageMetadata } from "@/lib/metadata";
 
 export default function PortfolioManagement() {
+  useEffect(() => {
+    updatePageMetadata("portfolioManagement");
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />

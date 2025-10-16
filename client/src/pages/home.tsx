@@ -1,11 +1,17 @@
+import { useEffect } from "react";
 import { Navigation } from "@/components/navigation";
 import { HeroSection } from "@/components/hero-section";
 import { DomainOverview } from "@/components/domain-overview";
 import { MethodologySection } from "@/components/methodology-section";
 import { ResourcesSection } from "@/components/resources-section";
 import { Footer } from "@/components/footer";
+import { updatePageMetadata } from "@/lib/metadata";
 
 export default function Home() {
+  useEffect(() => {
+    updatePageMetadata("home");
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />

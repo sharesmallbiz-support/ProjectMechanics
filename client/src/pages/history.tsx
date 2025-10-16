@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, TrendingUp, Users, Code } from "lucide-react";
 import { Link } from "wouter";
+import { updatePageMetadata } from "@/lib/metadata";
 
 const timelineEvents = [
   {
@@ -137,6 +139,10 @@ const getCategoryColor = (category: string) => {
 };
 
 export default function History() {
+  useEffect(() => {
+    updatePageMetadata("history");
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />

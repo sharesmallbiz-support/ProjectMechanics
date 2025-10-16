@@ -1,11 +1,17 @@
+import { useEffect } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowLeft, MessageSquare, Scale, Heart } from "lucide-react";
 import { Link } from "wouter";
+import { updatePageMetadata } from "@/lib/metadata";
 
 export default function ConflictManagement() {
+  useEffect(() => {
+    updatePageMetadata("conflictManagement");
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />

@@ -1,0 +1,11 @@
+# robots.txt for Project Mechanics
+# Project Management Methodology Website
+
+User-agent: *
+Allow: /
+
+# Sitemap location (will be generated in Phase 2)
+Sitemap: https://sharesmallbiz-support.github.io/ProjectMechanics/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

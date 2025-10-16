@@ -1,10 +1,11 @@
+import { useEffect, useState } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Search } from "lucide-react";
 import { Link } from "wouter";
-import { useState } from "react";
+import { updatePageMetadata } from "@/lib/metadata";
 
 const glossaryTerms = [
   {
@@ -71,6 +72,10 @@ const glossaryTerms = [
 
 export default function Glossary() {
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    updatePageMetadata("glossary");
+  }, []);
 
   const filteredTerms = glossaryTerms.filter(
     (term) =>

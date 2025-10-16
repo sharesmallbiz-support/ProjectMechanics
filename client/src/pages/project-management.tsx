@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -5,8 +6,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
+import { updatePageMetadata } from "@/lib/metadata";
 
 export default function ProjectManagement() {
+  useEffect(() => {
+    updatePageMetadata("projectManagement");
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
