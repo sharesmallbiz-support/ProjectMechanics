@@ -13,14 +13,19 @@ This directory contains utility scripts for maintaining the ProjectMechanics rep
 ```bash
 # Build for GitHub Pages (from project root)
 ./scripts/build-static.sh
+
+# Or directly from root
+npm run build
 ```
 
 **What It Does:**
 
-1. Runs Vite build with GitHub Pages configuration
-2. Outputs to `/docs` folder (GitHub Pages source)
-3. Uses relative base path for proper asset loading
+1. Runs Vite build configured to output to `/docs` folder
+2. Outputs directly to `/docs` folder (GitHub Pages source)
+3. Uses relative base path for proper asset loading on GitHub Pages
 4. Displays deployment instructions
+
+**Note:** The build configuration in `vite.config.ts` is set to always output to `/docs` folder.
 
 ---
 

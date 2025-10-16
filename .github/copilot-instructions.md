@@ -496,12 +496,22 @@ npm install {package}
 ### Build Process
 
 ```bash
-# Build for GitHub Pages
+# Build for GitHub Pages (production)
+npm run build
+
+# Or use build:gh-pages alias
 npm run build:gh-pages
 
 # Output goes to docs/ folder
 # Committed and pushed to main branch
 ```
+
+**Build Configuration:**
+
+- All builds output to `/docs` folder (configured in `vite.config.ts`)
+- No `/dist` folder is used
+- `docs/` folder is committed to repository for GitHub Pages
+- Build assets are in `docs/assets/` directory
 
 ### GitHub Pages Settings
 

@@ -1,8 +1,7 @@
 # Dependencies
 node_modules
 
-# Build outputs
-dist
+# Build outputs - docs folder is committed for GitHub Pages
 docs/*.js
 docs/*.css
 
