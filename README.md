@@ -107,15 +107,18 @@ The site will be available at `http://localhost:5173/`
 ### Build for Production
 
 ```bash
-# Build optimized static site
+# Build for local testing (uses absolute paths)
 npm run build
 
-# Build for GitHub Pages (outputs to /docs)
+# Build for GitHub Pages deployment (uses relative paths) ⭐ RECOMMENDED
 npm run build:gh-pages
 
 # Preview production build
 npm run preview
 ```
+
+> **⚠️ IMPORTANT:** Always use `npm run build:gh-pages` when deploying to GitHub Pages!  
+> The standard `npm run build` uses absolute paths which will cause 404 errors on GitHub Pages.
 
 ### TypeScript Check
 
@@ -252,16 +255,28 @@ This site is automatically deployed to GitHub Pages:
 ### Deploy Process
 
 ```bash
-# Build for GitHub Pages
+# 1. Build for GitHub Pages (CRITICAL: use build:gh-pages, not build!)
 npm run build:gh-pages
 
-# Commit changes
+# 2. Verify build output has relative paths
+# Check docs/index.html - should see "./assets/..." not "/assets/..."
+
+# 3. Commit changes
 git add .
 git commit -m "Deploy to GitHub Pages"
 
-# Push to GitHub
+# 4. Push to GitHub
 git push origin main
+
+# 5. Wait 1-2 minutes for GitHub Pages to rebuild
+
+# 6. Test deployment
+# https://sharesmallbiz-support.github.io/ProjectMechanics/
 ```
+
+> **⚠️ Common Deployment Issue:**  
+> If you see a blank page with 404 errors for assets, you likely used `npm run build` instead of `npm run build:gh-pages`.  
+> The `--base ./` flag in `build:gh-pages` is essential for GitHub Pages subfolder hosting.
 
 GitHub Pages will automatically serve from the `/docs` folder on the `main` branch.
 
