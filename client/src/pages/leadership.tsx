@@ -14,12 +14,12 @@ export default function Leadership() {
       <section className="gradient-bg text-primary-foreground py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Link href="/methodology">
-              <Button variant="outline" className="mb-6 bg-white/10 border-white/20 text-white hover:bg-white/20" data-testid="button-back-to-methodology">
+            <Button variant="outline" className="mb-6 bg-white/10 border-white/20 text-white hover:bg-white/20" data-testid="button-back-to-methodology" asChild>
+              <Link href="/methodology">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Methodology
-              </Button>
-            </Link>
+              </Link>
+            </Button>
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6" data-testid="text-leadership-hero-title">
               Project <span className="text-yellow-300">Leadership</span>
             </h1>

@@ -15,23 +15,25 @@ export function HeroSection() {
               Project Mechanics is a project management methodology built from decades of real-world experience. We blend structured discipline with adaptive problem-solving — sharing the mechanics so anyone can master projects, not selling consulting hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/methodology">
-                <Button 
-                  className="bg-primary-foreground text-primary px-8 py-3 rounded-md font-semibold hover:bg-primary-foreground/90 transition-colors"
-                  data-testid="button-explore-methodology"
-                >
+              <Button 
+                className="bg-primary-foreground text-primary px-8 py-3 rounded-md font-semibold hover:bg-primary-foreground/90 transition-colors"
+                data-testid="button-explore-methodology"
+                asChild
+              >
+                <Link href="/methodology">
                   Explore Methodology
-                </Button>
-              </Link>
-              <Link href="/blog" data-testid="link-learn-more">
-                <Button 
-                  className="bg-primary-foreground text-primary px-8 py-3 rounded-md font-semibold hover:bg-primary-foreground/90 transition-colors"
-                  data-testid="button-learn-more"
-                >
+                </Link>
+              </Button>
+              <Button 
+                className="bg-primary-foreground text-primary px-8 py-3 rounded-md font-semibold hover:bg-primary-foreground/90 transition-colors"
+                data-testid="button-learn-more"
+                asChild
+              >
+                <Link href="/blog" data-testid="link-learn-more">
                   <Play className="mr-2 h-4 w-4" />
                   Learn More
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
           <div className="relative">

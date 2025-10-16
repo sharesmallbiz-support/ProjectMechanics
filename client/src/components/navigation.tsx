@@ -16,19 +16,20 @@ export function Navigation() {
             </Link>
             <div className="hidden md:flex space-x-6">
               <Link href="/methodology" data-testid="link-methodology">
-                <a className="nav-link text-muted-foreground font-medium">Methodology</a>
+                <span className="nav-link text-muted-foreground font-medium">Methodology</span>
               </Link>
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Link href="/methodology">
-              <Button 
-                className="bg-primary text-primary-foreground px-6 py-2 rounded-md font-medium hover:bg-primary/90 transition-colors"
-                data-testid="button-explore-framework"
-              >
+            <Button 
+              className="bg-primary text-primary-foreground px-6 py-2 rounded-md font-medium hover:bg-primary/90 transition-colors"
+              data-testid="button-explore-framework"
+              asChild
+            >
+              <Link href="/methodology">
                 Explore Framework
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

@@ -31,90 +31,97 @@ export default function Methodology() {
                 Explore our comprehensive methodology sections:
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-4">
-                <Link href="/methodology/project-management">
-                  <Button 
-                    variant="outline" 
-                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
-                    data-testid="button-nav-project-management"
-                  >
+                <Button 
+                  variant="outline" 
+                  className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                  data-testid="button-nav-project-management"
+                  asChild
+                >
+                  <Link href="/methodology/project-management">
                     <div className="text-center">
                       <div className="text-sm font-semibold">Project</div>
                       <div className="text-sm">Management</div>
                     </div>
-                  </Button>
-                </Link>
-                <Link href="/methodology/portfolio-management">
-                  <Button 
-                    variant="outline" 
-                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
-                    data-testid="button-nav-portfolio-management"
-                  >
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                  data-testid="button-nav-portfolio-management"
+                  asChild
+                >
+                  <Link href="/methodology/portfolio-management">
                     <div className="text-center">
                       <div className="text-sm font-semibold">Portfolio</div>
                       <div className="text-sm">Management</div>
                     </div>
-                  </Button>
-                </Link>
-                <Link href="/methodology/change-management">
-                  <Button 
-                    variant="outline" 
-                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
-                    data-testid="button-nav-change-management"
-                  >
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                  data-testid="button-nav-change-management"
+                  asChild
+                >
+                  <Link href="/methodology/change-management">
                     <div className="text-center">
                       <div className="text-sm font-semibold">Change</div>
                       <div className="text-sm">Management</div>
                     </div>
-                  </Button>
-                </Link>
-                <Link href="/methodology/conflict-management">
-                  <Button 
-                    variant="outline" 
-                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
-                    data-testid="button-nav-conflict-management"
-                  >
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                  data-testid="button-nav-conflict-management"
+                  asChild
+                >
+                  <Link href="/methodology/conflict-management">
                     <div className="text-center">
                       <div className="text-sm font-semibold">Conflict</div>
                       <div className="text-sm">Management</div>
                     </div>
-                  </Button>
-                </Link>
-                <Link href="/methodology/leadership">
-                  <Button 
-                    variant="outline" 
-                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
-                    data-testid="button-nav-leadership"
-                  >
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                  data-testid="button-nav-leadership"
+                  asChild
+                >
+                  <Link href="/methodology/leadership">
                     <div className="text-center">
                       <div className="text-sm font-semibold">Project</div>
                       <div className="text-sm">Leadership</div>
                     </div>
-                  </Button>
-                </Link>
-                <Link href="/methodology/glossary">
-                  <Button 
-                    variant="outline" 
-                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
-                    data-testid="button-nav-glossary"
-                  >
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                  data-testid="button-nav-glossary"
+                  asChild
+                >
+                  <Link href="/methodology/glossary">
                     <div className="text-center">
                       <div className="text-sm font-semibold">Glossary</div>
                       <div className="text-sm">& Terms</div>
                     </div>
-                  </Button>
-                </Link>
-                <Link href="/methodology/history">
-                  <Button 
-                    variant="outline" 
-                    className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
-                    data-testid="button-nav-history"
-                  >
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300 py-6 px-4" 
+                  data-testid="button-nav-history"
+                  asChild
+                >
+                  <Link href="/methodology/history">
                     <div className="text-center">
                       <div className="text-sm font-semibold">History</div>
                       <div className="text-sm">& Evolution</div>
                     </div>
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
