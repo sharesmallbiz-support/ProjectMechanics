@@ -9,6 +9,7 @@
 ## ✅ Already Optimized (Previous Work)
 
 Your site has already been cleaned up significantly:
+
 - ✅ Removed 152 packages (server-side, API-dependent code)
 - ✅ Bundle reduced by 41.6% (CSS) and 15% (JS)
 - ✅ Saved ~245MB in node_modules
@@ -128,12 +129,14 @@ npm run build:gh-pages
 ## 📋 What to Keep
 
 **Essential UI Components (4):**
+
 - ✅ badge.tsx
 - ✅ button.tsx
 - ✅ card.tsx
 - ✅ tooltip.tsx
 
 **Essential Packages:**
+
 - ✅ React & React DOM
 - ✅ Wouter (routing)
 - ✅ Lucide React (icons)

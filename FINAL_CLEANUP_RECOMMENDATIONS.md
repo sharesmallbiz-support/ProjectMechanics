@@ -15,6 +15,7 @@ Previous cleanup phases removed 152 packages. This analysis identifies **additio
 ## ✅ What Was Previously Removed
 
 Based on existing documentation:
+
 - ✅ 121 API-dependent packages (Phase 1)
 - ✅ 27 Radix UI packages (Phase 2)
 - ✅ 4 utility packages (Phase 3)
@@ -45,6 +46,7 @@ client/src/components/ui/toaster.tsx        ❌ Not used
 ```
 
 **Verification:**
+
 - Searched all `.tsx` files for imports from these components
 - Only found internal references (component defining itself)
 - No pages or components import these
@@ -62,6 +64,7 @@ Since the above components aren't used, their dependencies can be removed:
 ```
 
 **Keep only:**
+
 ```json
 "@radix-ui/react-slot": "^1.2.3"            ✅ (Used by button component)
 "@radix-ui/react-tooltip": "^1.2.8"         ✅ (Used in App.tsx)
@@ -74,6 +77,7 @@ Since the above components aren't used, their dependencies can be removed:
 ```
 
 **Verification:**
+
 - Searched all source files for `framer-motion`, `motion.`, or framer imports
 - **Zero matches** - no animations using this library
 - Large package (~500KB) with no usage
@@ -121,12 +125,14 @@ Since there's no server and Vite handles all building, these can be removed.
 ## 📦 Currently Used Components
 
 **UI Components (4 files):**
+
 - ✅ `badge.tsx` - Used in methodology pages
 - ✅ `button.tsx` - Used extensively throughout
 - ✅ `card.tsx` - Used in all pages
 - ✅ `tooltip.tsx` - Provider in App.tsx
 
 **Application Components (6 files):**
+
 - ✅ `domain-overview.tsx`
 - ✅ `footer.tsx`
 - ✅ `hero-section.tsx`
@@ -135,6 +141,7 @@ Since there's no server and Vite handles all building, these can be removed.
 - ✅ `resources-section.tsx`
 
 **Pages (8 files):**
+
 - ✅ All pages in `client/src/pages/` are routed in App.tsx
 
 ---
@@ -241,18 +248,21 @@ npm run preview
 ## 📈 Expected Impact
 
 ### Before Phase 4
+
 - **Packages:** 35 production + dev dependencies
 - **UI Components:** 12 files (8 unused)
 - **Bundle Size:** ~426KB uncompressed, ~140KB gzipped
 - **framer-motion:** ~500KB unused
 
 ### After Phase 4
+
 - **Packages:** ~24-26 dependencies (depending on Replit removal)
 - **UI Components:** 4 files (only used ones)
 - **Bundle Size:** ~360-380KB uncompressed, ~110-120KB gzipped
 - **Savings:** Additional ~80-100MB node_modules, ~50KB bundle
 
 ### Total Optimization (All Phases)
+
 - **Package Reduction:** ~500 → ~25 packages (95% reduction)
 - **Node Modules:** ~800MB → ~455MB (43% reduction)
 - **Bundle Size:** ~40% total reduction
@@ -263,13 +273,16 @@ npm run preview
 ## ⚠️ Important Notes
 
 ### Keep These Files
+
 - ✅ `build-static.sh` - Used for GitHub Pages builds
 - ✅ `cleanup-unused.ps1` - Useful cleanup script
 - ✅ All markdown documentation files
 - ✅ `components.json` - Shadcn/UI config
 
 ### About Replit Plugins
+
 The Replit plugins are conditionally loaded:
+
 ```typescript
 ...(process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined
   ? [/* Replit plugins */]
@@ -277,14 +290,17 @@ The Replit plugins are conditionally loaded:
 ```
 
 They won't affect production builds but add to node_modules size. Remove if:
+
 - ❌ You don't develop on Replit
 - ❌ You want minimal dependencies
 
 Keep if:
+
 - ✅ You develop on Replit
 - ✅ You want better dev experience on Replit
 
 ### Server Files
+
 Keep `server/index.ts` and `serve-static.js` if you want to preview the static build locally. They're not deployed to GitHub Pages but useful for development.
 
 ---
@@ -292,18 +308,21 @@ Keep `server/index.ts` and `serve-static.js` if you want to preview the static b
 ## 🎯 Recommended Action Plan
 
 ### Conservative Approach (Safest)
+
 1. Remove unused packages only
 2. Keep all component files (small size impact)
 3. Keep Replit plugins and server files
 4. Test thoroughly
 
 ### Moderate Approach (Recommended)
+
 1. Remove unused packages
 2. Delete unused component files
 3. Keep Replit plugins and server files for dev flexibility
 4. Update vite.config if needed
 
 ### Aggressive Approach (Maximum Optimization)
+
 1. Remove all unused packages including Replit plugins
 2. Delete all unused component files
 3. Remove server files if you don't need local preview
@@ -315,6 +334,7 @@ Keep `server/index.ts` and `serve-static.js` if you want to preview the static b
 ## ✅ Validation Checklist
 
 After cleanup:
+
 - [ ] `npm run check` passes with no TypeScript errors
 - [ ] `npm run build:gh-pages` completes successfully
 - [ ] Build output shows reduced bundle sizes
@@ -376,6 +396,7 @@ Your static site has already been well-optimized through 3 previous cleanup phas
 3. **2 hooks** that aren't imported anywhere
 
 The site currently works perfectly, but these additional removals will:
+
 - ✅ Further reduce bundle size
 - ✅ Speed up npm installs
 - ✅ Simplify maintenance
