@@ -107,7 +107,8 @@ foreach ($file in $MarkdownFiles) {
     try {
         if ($DryRun) {
             Write-Host "  [DRY RUN] Would move: $($file.Name) → copilot/session-$SessionDate/" -ForegroundColor Yellow
-        } else {
+        }
+        else {
             # Check if file already exists at destination
             if (Test-Path $DestinationPath) {
                 $timestamp = Get-Date -Format "HHmmss"
@@ -138,7 +139,8 @@ Write-Host ""
 if ($DryRun) {
     Write-Host "This was a DRY RUN. No files were actually moved." -ForegroundColor Yellow
     Write-Host "Files that would be moved: $MovedCount" -ForegroundColor Yellow
-} else {
+}
+else {
     Write-Host "✅ Successfully moved: $MovedCount file(s)" -ForegroundColor Green
     if ($ErrorCount -gt 0) {
         Write-Host "❌ Errors encountered: $ErrorCount file(s)" -ForegroundColor Red

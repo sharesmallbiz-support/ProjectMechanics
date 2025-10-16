@@ -27,6 +27,7 @@ This directory keeps the repository root clean by organizing all session documen
 ## 📝 What Goes Here
 
 **Include:**
+
 - Analysis and planning documents
 - Cleanup and optimization reports
 - Implementation notes and decisions
@@ -36,6 +37,7 @@ This directory keeps the repository root clean by organizing all session documen
 - Architecture decision records
 
 **Do Not Include:**
+
 - Essential project documentation (stays in root)
 - README.md (project root)
 - LICENSE.md, CONTRIBUTING.md
@@ -73,10 +75,12 @@ If you prefer manual organization:
 Use ISO 8601 date format: `session-YYYY-MM-DD`
 
 **Examples:**
+
 - `session-2025-10-15/` - Session on October 15, 2025
 - `session-2025-11-20/` - Session on November 20, 2025
 
 **Benefits:**
+
 - Chronological sorting
 - Unambiguous dates
 - International standard

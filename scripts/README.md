@@ -4,6 +4,62 @@ This directory contains utility scripts for maintaining the ProjectMechanics rep
 
 ## Available Scripts
 
+### 📄 build-static.sh
+
+**Purpose:** Builds the static site for GitHub Pages deployment.
+
+**Usage:**
+
+```bash
+# Build for GitHub Pages (from project root)
+./scripts/build-static.sh
+```
+
+**What It Does:**
+
+1. Runs Vite build with GitHub Pages configuration
+2. Outputs to `/docs` folder (GitHub Pages source)
+3. Uses relative base path for proper asset loading
+4. Displays deployment instructions
+
+---
+
+### 🧹 cleanup-unused.ps1
+
+**Purpose:** Interactive script to remove unused npm packages in phases.
+
+**Usage:**
+
+```powershell
+# Interactive mode (asks which phase)
+.\scripts\cleanup-unused.ps1
+
+# Run specific phase
+.\scripts\cleanup-unused.ps1 -Phase 1  # Server-side packages
+.\scripts\cleanup-unused.ps1 -Phase 2  # File upload & forms
+.\scripts\cleanup-unused.ps1 -Phase 3  # Unused Radix UI
+.\scripts\cleanup-unused.ps1 -Phase 4  # Charts/calendar
+
+# Run all phases (with confirmation)
+.\scripts\cleanup-unused.ps1 -Phase all
+```
+
+**Phases:**
+
+- **Phase 1:** Server-side packages (Express, databases, auth) - Safest
+- **Phase 2:** File upload and form libraries
+- **Phase 3:** Unused Radix UI components
+- **Phase 4:** Chart, calendar, and carousel libraries
+
+**Safety Features:**
+
+- Interactive confirmation for each phase
+- Automatic TypeScript check after removal
+- Clear rollback instructions
+- Phase-by-phase approach
+
+---
+
 ### 📄 cleanup-docs.ps1
 
 **Purpose:** Organizes markdown documentation files into dated session folders to keep the repository root clean.
@@ -40,6 +96,7 @@ This directory contains utility scripts for maintaining the ProjectMechanics rep
 5. Preserves files if they already exist (adds timestamp)
 
 **Files Excluded (Stay in Root):**
+
 - README.md
 - LICENSE.md
 - CONTRIBUTING.md
@@ -48,6 +105,7 @@ This directory contains utility scripts for maintaining the ProjectMechanics rep
 - SECURITY.md
 
 **Target Location:**
+
 ```
 copilot/
 └── session-YYYY-MM-DD/
@@ -56,6 +114,28 @@ copilot/
     ├── cleanup-*.md
     └── other-docs.md
 ```
+
+---
+
+### 🌐 serve-static.js
+
+**Purpose:** Local development server to preview the built static site.
+
+**Usage:**
+
+```bash
+# Start the preview server
+node scripts/serve-static.js
+```
+
+**What It Does:**
+
+1. Serves files from `/docs` folder (GitHub Pages output)
+2. Runs on <http://localhost:5000>
+3. Provides SPA fallback routing
+4. Useful for testing before deploying
+
+**Note:** This is for local testing only. GitHub Pages uses its own server.
 
 ---
 

@@ -70,10 +70,13 @@ ProjectMechanics/
 │   └── session-2025-10-15/        # Session folder (example)
 │       ├── README.md              # Session summary
 │       └── *.md                   # 15 docs moved here
-├── scripts/
+├── scripts/                       # 🆕 All utility scripts
 │   ├── README.md                  # Scripts documentation
-│   ├── cleanup-docs.ps1           # Cleanup script
-│   └── cleanup-docs.bat           # Batch wrapper
+│   ├── build-static.sh            # GitHub Pages build
+│   ├── cleanup-docs.ps1           # Doc organization
+│   ├── cleanup-docs.bat           # Batch wrapper
+│   ├── cleanup-unused.ps1         # Package cleanup
+│   └── serve-static.js            # Local preview server
 └── README.md                      # Project README (root)
 ```
 

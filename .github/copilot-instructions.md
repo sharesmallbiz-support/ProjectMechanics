@@ -1,5 +1,45 @@
 # GitHub Copilot Instructions for ProjectMechanics
 
+## ⚠️ CRITICAL RULE - Documentation Placement
+
+**🚨 ALL SESSION DOCUMENTATION MUST GO IN `copilot/session-YYYY-MM-DD/` FOLDER 🚨**
+
+**NEVER create these files in the root directory:**
+
+- ❌ Analysis reports (e.g., `UNUSED_CODE_ANALYSIS.md`)
+- ❌ Cleanup reports (e.g., `CLEANUP_REPORT.md`, `PHASE*_CLEANUP_COMPLETE.md`)
+- ❌ Setup documentation (e.g., `SETUP_COMPLETE.md`)
+- ❌ Implementation notes (e.g., `IMPLEMENTATION_NOTES.md`)
+- ❌ Session summaries (e.g., `ROOT_CLEANUP_COMPLETE.md`)
+- ❌ ANY markdown file related to development sessions
+
+**✅ ALWAYS create session documentation in:**
+
+```
+copilot/
+└── session-YYYY-MM-DD/
+    ├── analysis-{topic}.md
+    ├── cleanup-report.md
+    ├── implementation-notes.md
+    ├── setup-complete.md
+    └── ... (all session files)
+```
+
+**✅ ONLY these markdown files belong in root:**
+
+- `README.md` (project overview for users)
+- `LICENSE.md` (if present)
+- **That's it. Nothing else.**
+
+**Before creating ANY markdown file, ask yourself:**
+
+1. Is this session documentation? → Put in `copilot/session-{date}/`
+2. Is this the main project README? → Keep in root
+3. Is this a license? → Keep in root
+4. Anything else? → Put in `copilot/session-{date}/`
+
+---
+
 ## Project Overview
 
 This is a **static website** built for GitHub Pages - a pure frontend React application with no backend, API, or server components.
@@ -169,6 +209,8 @@ export function Card({ title, description, children }: CardProps) {
 
 ### Session Documentation
 
+**🚨 CRITICAL: All session documentation MUST be in `copilot/session-YYYY-MM-DD/` folder 🚨**
+
 **All analysis, cleanup, and session markdown files should be stored in:**
 
 ```
@@ -177,15 +219,21 @@ copilot/
     ├── analysis-{topic}.md
     ├── cleanup-report.md
     ├── implementation-notes.md
-    └── ...
+    ├── setup-complete.md
+    ├── phase*-cleanup-complete.md
+    └── ... (all session files)
 ```
 
 **Root Directory Rules:**
 
-- ❌ Do not create markdown files in root directory
-- ✅ Use `copilot/session-{date}/` for all session documentation
+- ❌ **NEVER** create markdown files in root directory (except README.md)
+- ❌ **NO** analysis reports in root (e.g., `UNUSED_CODE_ANALYSIS.md`)
+- ❌ **NO** cleanup reports in root (e.g., `CLEANUP_REPORT.md`)
+- ❌ **NO** setup documentation in root (e.g., `SETUP_COMPLETE.md`)
+- ❌ **NO** session summaries in root (e.g., `ROOT_CLEANUP_COMPLETE.md`)
+- ✅ Use `copilot/session-{date}/` for **ALL** session documentation
 - ✅ Keep root clean and organized
-- ✅ Exception: README.md and essential project docs only
+- ✅ **ONLY EXCEPTION:** `README.md` and `LICENSE.md` (if present)
 
 **Running Cleanup:**
 
@@ -545,7 +593,7 @@ npm run build
 
 ### Project History
 
-- See `PHASE1-4_CLEANUP_COMPLETE.md` for optimization history
+- See `copilot/session-2025-10-15/PHASE1-4_CLEANUP_COMPLETE.md` for optimization history
 - Check `copilot/session-*/` for previous session notes
 - Review git history for implementation details
 
@@ -564,6 +612,11 @@ npm run build
 **Avoid:** Anything requiring a backend, database, or server-side processing.
 
 **Keep Clean:** Store all session documentation in `copilot/session-{date}/` folders, not in the root directory.
+
+---
+
+_Last Updated: October 15, 2025_  
+_Project: ProjectMechanics - Static GitHub Pages Site_
 
 ---
 
