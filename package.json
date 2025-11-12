@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build && npm run prerender && npm run sitemap",
     "build:gh-pages": "vite build --base ./ --emptyOutDir && npm run prerender && npm run sitemap",
-    "prerender": "node scripts/prerender.js",
-    "sitemap": "node scripts/generate-sitemap.js",
+    "prerender": "node src/scripts/prerender.js",
+    "sitemap": "node src/scripts/generate-sitemap.js",
     "preview": "vite preview",
     "check": "tsc"
   },
