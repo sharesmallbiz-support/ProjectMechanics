@@ -133,32 +133,42 @@ npm run check
 
 ```
 ProjectMechanics/
-├── client/                  # Frontend application
+├── src/                    # Source files
 │   ├── index.html          # Entry point
 │   ├── public/             # Static assets
-│   └── src/
+│   ├── scripts/            # Build scripts
+│   │   ├── prerender.js    # Pre-render static HTML
+│   │   ├── generate-sitemap.js  # Generate sitemap.xml
+│   │   └── serve-static.js      # Local static server
+│   └── src/                # React application source
 │       ├── App.tsx         # Main app component
 │       ├── main.tsx        # React entry point
 │       ├── components/     # React components
-│       │   ├── domain-overview.tsx
 │       │   ├── footer.tsx
 │       │   ├── hero-section.tsx
 │       │   ├── navigation.tsx
 │       │   └── ui/         # Reusable UI components
 │       ├── hooks/          # Custom React hooks
 │       ├── lib/            # Utilities and constants
-│       ├── pages/          # Route pages
-│       │   ├── home.tsx
-│       │   ├── methodology.tsx
-│       │   ├── project-management.tsx
-│       │   └── ...
-│       └── services/       # (None - no API calls)
-├── docs/                   # GitHub Pages build output
-├── attached_assets/        # Source images and media
-├── package.json           # Dependencies and scripts
-├── vite.config.ts         # Vite configuration
-├── tailwind.config.ts     # Tailwind CSS config
-└── tsconfig.json          # TypeScript configuration
+│       └── pages/          # Route pages
+│           ├── home.tsx
+│           ├── methodology.tsx
+│           ├── project-management.tsx
+│           └── ...
+├── docs/                   # GitHub Pages build output (published site)
+│   ├── index.html          # Main entry point
+│   ├── *.html              # Pre-rendered route pages
+│   ├── assets/             # Bundled CSS/JS
+│   ├── sitemap.xml         # SEO sitemap
+│   └── robots.txt          # Search engine directives
+├── documentation/          # Project documentation
+│   ├── assets/             # Documentation images and files
+│   ├── copilot/            # AI assistant session logs
+│   └── archive/            # Archived code and experiments
+├── package.json            # Dependencies and scripts
+├── vite.config.ts          # Vite configuration
+├── tailwind.config.ts      # Tailwind CSS config
+└── tsconfig.json           # TypeScript configuration
 ```
 
 ---
@@ -331,17 +341,19 @@ npm run check
 All content is statically defined in React components. To add new content:
 
 1. **New Page:**
-   - Create component in `client/src/pages/`
-   - Add route in `client/src/App.tsx`
-   - Add navigation link in `client/src/components/navigation.tsx`
+   - Create component in `src/src/pages/`
+   - Add route in `src/src/App.tsx`
+   - Add navigation link in `src/src/components/navigation.tsx`
+   - Update route config in `src/scripts/prerender.js` and `src/scripts/generate-sitemap.js`
 
 2. **Update Content:**
-   - Edit existing component files
-   - Update constants in `client/src/lib/constants.ts`
+   - Edit existing component files in `src/src/`
+   - Update constants in `src/src/lib/constants.ts`
 
-3. **Images:**
-   - Add to `client/public/` or `attached_assets/`
-   - Reference in components with absolute paths
+3. **Images & Assets:**
+   - Add to `src/public/` for site assets
+   - Add to `documentation/assets/` for documentation images
+   - Reference in components with appropriate paths
 
 ### No CMS or Database
 
@@ -394,11 +406,13 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 📚 Related Documentation
 
-- [STATIC_SITE_CLEANUP_SUMMARY.md](STATIC_SITE_CLEANUP_SUMMARY.md) - Optimization details
-- [PHASE1_CLEANUP_COMPLETE.md](PHASE1_CLEANUP_COMPLETE.md) - Phase 1 cleanup report
-- [PHASE2_CLEANUP_COMPLETE.md](PHASE2_CLEANUP_COMPLETE.md) - Phase 2 cleanup report
-- [PHASE3_CLEANUP_COMPLETE.md](PHASE3_CLEANUP_COMPLETE.md) - Phase 3 cleanup report
-- [STATIC_SITE_CLEANUP.md](STATIC_SITE_CLEANUP.md) - Cleanup analysis
+All project documentation is located in the `documentation/` folder:
+
+- [documentation/copilot/session-2025-10-15/STATIC_SITE_CLEANUP_SUMMARY.md](documentation/copilot/session-2025-10-15/STATIC_SITE_CLEANUP_SUMMARY.md) - Optimization details
+- [documentation/copilot/session-2025-10-15/PHASE1_CLEANUP_COMPLETE.md](documentation/copilot/session-2025-10-15/PHASE1_CLEANUP_COMPLETE.md) - Phase 1 cleanup report
+- [documentation/copilot/session-2025-10-15/PHASE2_CLEANUP_COMPLETE.md](documentation/copilot/session-2025-10-15/PHASE2_CLEANUP_COMPLETE.md) - Phase 2 cleanup report
+- [documentation/copilot/session-2025-10-15/PHASE3_CLEANUP_COMPLETE.md](documentation/copilot/session-2025-10-15/PHASE3_CLEANUP_COMPLETE.md) - Phase 3 cleanup report
+- [documentation/copilot/session-2025-10-15/STATIC_SITE_CLEANUP.md](documentation/copilot/session-2025-10-15/STATIC_SITE_CLEANUP.md) - Cleanup analysis
 
 ---
 
@@ -416,6 +430,16 @@ The focus is on providing high-quality educational content in a fast, accessible
 
 ---
 
-**Version:** 1.0.0  
-**Last Updated:** October 15, 2025  
-**Status:** ✅ Production Ready - Fully Optimized Static Site
+**Version:** 2.0.0
+**Last Updated:** November 12, 2025
+**Status:** ✅ Production Ready - Optimized Static Site for GitHub Pages
+
+### Recent Changes (v2.0.0)
+
+- Reorganized project structure for GitHub Pages optimization
+- Moved source files from `client/` to `src/` for clarity
+- Moved build scripts to `src/scripts/` for better organization
+- Created `documentation/` folder for all markdown documentation
+- Archived unused code to `documentation/archive/`
+- Minimal root directory with clean structure
+- Full standalone HTML files in `docs/` for GitHub Pages

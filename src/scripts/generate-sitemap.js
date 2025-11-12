@@ -8,7 +8,7 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const docsDir = resolve(__dirname, '../docs');
+const docsDir = resolve(__dirname, '../../docs');
 
 const BASE_URL = 'https://sharesmallbiz-support.github.io/ProjectMechanics';
 const lastmod = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format

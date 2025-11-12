@@ -1,6 +1,6 @@
 {
-  "include": ["client/src/**/*", "shared/**/*"],
-  "exclude": ["node_modules", "build", "server", "**/*.test.ts"],
+  "include": ["src/src/**/*", "shared/**/*"],
+  "exclude": ["node_modules", "build", "documentation/archive", "**/*.test.ts"],
   "compilerOptions": {
     "incremental": true,
     "tsBuildInfoFile": "./node_modules/typescript/tsbuildinfo",
@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "types": ["node", "vite/client"],
     "paths": {
-      "@/*": ["./client/src/*"],
+      "@/*": ["./src/src/*"],
       "@shared/*": ["./shared/*"]
     }
   }

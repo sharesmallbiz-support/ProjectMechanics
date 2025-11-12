@@ -11,7 +11,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const docsDir = resolve(__dirname, '../docs');
+const docsDir = resolve(__dirname, '../../docs');
 
 // Route configuration matching App.tsx
 const routes = [
