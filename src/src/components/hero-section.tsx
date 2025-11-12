@@ -4,12 +4,12 @@ import { Link } from "wouter";
 
 export function HeroSection() {
   return (
-    <section className="gradient-bg text-primary-foreground py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="gradient-bg text-primary-foreground py-20 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-              Mastering the <span className="text-yellow-300">Art and Science</span> of Projects
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6 drop-shadow-sm">
+              Mastering the <span className="text-white drop-shadow-md">Art and Science</span> of Projects
             </h1>
             <p className="text-lg lg:text-xl opacity-90 mb-8 leading-relaxed">
               Project Mechanics is a comprehensive project management methodology built from decades of real-world experience. This static resource site provides free access to structured frameworks, best practices, and practical guidance — knowledge shared openly, no barriers, no login required.

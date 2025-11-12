@@ -54,20 +54,39 @@ export function MethodologySection() {
             Three Key Constituencies
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
-            {constituencies.map((constituency, index) => (
-              <div 
-                key={index}
-                className={`bg-${constituency.color}-50 p-6 rounded-lg`}
-                data-testid={`card-constituency-${constituency.name.toLowerCase()}`}
-              >
-                <h4 className={`font-semibold text-${constituency.color}-900 mb-2`} data-testid={`text-constituency-${constituency.name.toLowerCase()}-name`}>
-                  {constituency.name}
-                </h4>
-                <p className={`text-${constituency.color}-800`} data-testid={`text-constituency-${constituency.name.toLowerCase()}-description`}>
-                  {constituency.description}
-                </p>
-              </div>
-            ))}
+            <div 
+              className="bg-blue-50 p-6 rounded-lg border border-blue-200"
+              data-testid="card-constituency-client"
+            >
+              <h4 className="font-semibold text-blue-900 mb-2" data-testid="text-constituency-client-name">
+                {constituencies[0].name}
+              </h4>
+              <p className="text-blue-800" data-testid="text-constituency-client-description">
+                {constituencies[0].description}
+              </p>
+            </div>
+            <div 
+              className="bg-green-50 p-6 rounded-lg border border-green-200"
+              data-testid="card-constituency-staff"
+            >
+              <h4 className="font-semibold text-green-900 mb-2" data-testid="text-constituency-staff-name">
+                {constituencies[1].name}
+              </h4>
+              <p className="text-green-800" data-testid="text-constituency-staff-description">
+                {constituencies[1].description}
+              </p>
+            </div>
+            <div 
+              className="bg-purple-50 p-6 rounded-lg border border-purple-200"
+              data-testid="card-constituency-management"
+            >
+              <h4 className="font-semibold text-purple-900 mb-2" data-testid="text-constituency-management-name">
+                {constituencies[2].name}
+              </h4>
+              <p className="text-purple-800" data-testid="text-constituency-management-description">
+                {constituencies[2].description}
+              </p>
+            </div>
           </div>
         </div>
 
