@@ -4,7 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/ProjectMechanics/",
+  base: "./",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "src", "src"),
