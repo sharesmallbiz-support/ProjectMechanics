@@ -1,7 +1,7 @@
 {
   "name": "document-agent-web",
-  "version": "1.0.0",
-  "description": "React frontend for Business Document Agent (Prompt Spark Client)",
+  "version": "2.0.0",
+  "description": "React frontend for Business Document Agent with Editable Workflow (Prompt Spark Client)",
   "type": "module",
   "scripts": {
     "dev": "vite",

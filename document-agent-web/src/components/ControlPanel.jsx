@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Loader2, AlertCircle, CheckCircle } from 'lucide-react';
+import { Play, Loader2, AlertCircle, CheckCircle, Save } from 'lucide-react';
 
 function ControlPanel({
   initialPrompt,
@@ -8,7 +8,9 @@ function ControlPanel({
   isLoading,
   error,
   onRunStep,
-  isWorkflowComplete
+  isWorkflowComplete,
+  canProceed,
+  hasUnsavedEdits
 }) {
   const canEditPrompt = currentStep.index === 0;
 
@@ -52,7 +54,7 @@ Example: Create a comprehensive market analysis report for expanding our cloud s
         <div>
           <button
             onClick={onRunStep}
-            disabled={isLoading || !initialPrompt.trim()}
+            disabled={isLoading || !canProceed}
             className="btn-primary w-full flex items-center justify-center gap-2 text-lg py-4"
           >
             {isLoading ? (
@@ -68,11 +70,22 @@ Example: Create a comprehensive market analysis report for expanding our cloud s
             )}
           </button>
 
-          {!initialPrompt.trim() && (
-            <p className="mt-2 text-sm text-amber-600 flex items-center gap-1">
-              <AlertCircle className="w-4 h-4" />
-              Please enter an initial prompt to begin
-            </p>
+          {/* Can't proceed messages */}
+          {!canProceed && !isLoading && (
+            <div className="mt-2 space-y-2">
+              {!initialPrompt.trim() && (
+                <p className="text-sm text-amber-600 flex items-center gap-1">
+                  <AlertCircle className="w-4 h-4" />
+                  Please enter an initial prompt to begin
+                </p>
+              )}
+              {hasUnsavedEdits && (
+                <p className="text-sm text-amber-600 flex items-center gap-1">
+                  <Save className="w-4 h-4" />
+                  Please save your edits before continuing
+                </p>
+              )}
+            </div>
           )}
         </div>
       )}
@@ -144,9 +157,10 @@ Example: Create a comprehensive market analysis report for expanding our cloud s
         <ol className="text-sm text-blue-800 space-y-1.5 list-decimal list-inside">
           <li>Enter your document idea in the prompt above</li>
           <li>Click the button to run each step sequentially</li>
-          <li>Review outputs as each step completes</li>
-          <li>All steps build on previous results automatically</li>
-          <li>Download or copy your final document when complete</li>
+          <li>Review and edit outputs from each step as needed</li>
+          <li>Save your edits before proceeding to the next step</li>
+          <li>Accept or reject critique feedback in Step 4</li>
+          <li>Download your final polished document</li>
         </ol>
       </div>
     </div>

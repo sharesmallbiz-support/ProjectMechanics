@@ -4,18 +4,22 @@ A React-based web application that visualizes and drives a 5-step AI agent workf
 
 ## Overview
 
-The Business Document Agent guides users through a systematic 5-step process to create comprehensive business documents:
+The Business Document Agent guides users through a systematic 5-step process to create comprehensive business documents with **full editing capabilities** to refine AI outputs:
 
-1. **SPECIFY** - Requirements Analyst defines document requirements and scope
-2. **PLAN** - Strategic Planner creates detailed outline and task breakdown
-3. **DRAFT** - Content Writer generates initial document draft
-4. **CRITIQUE** - Quality Reviewer analyzes and provides improvement feedback
+1. **SPECIFY** - Requirements Analyst defines document requirements and scope *(Editable)*
+2. **PLAN** - Strategic Planner creates detailed outline and task breakdown *(Editable)*
+3. **DRAFT** - Content Writer generates initial document draft *(Editable)*
+4. **CRITIQUE** - Quality Reviewer analyzes and provides improvement feedback *(Accept/Reject)*
 5. **FINALIZE** - Document Finalizer applies improvements and produces final document
 
 ## Features
 
 ### ✨ Core Capabilities
 
+- **Editable Workflow**: Edit and refine AI outputs at each step before proceeding
+- **Version Tracking**: Track all edits and changes throughout the document evolution
+- **Save Validation**: Enforce saving edits before moving to next step
+- **Critique Modal**: Accept or reject critique feedback via dedicated modal interface
 - **Sequential Workflow**: Step-by-step process with automatic dependency management
 - **Mock API Mode**: Fully functional mock API for development and testing
 - **Real-time Progress**: Visual progress indicators and status updates
@@ -27,10 +31,11 @@ The Business Document Agent guides users through a systematic 5-step process to 
 
 ### 🎨 UI Components
 
-- **Control Panel**: Input management, step execution, progress tracking
-- **Output Viewer**: Display all 5 steps with status indicators
-- **Step Cards**: Individual cards for each workflow step
-- **Status Badges**: Visual indicators (Pending, Processing, Complete)
+- **Control Panel**: Input management, step execution, progress tracking, save validation
+- **Output Viewer**: Display all 5 steps with status indicators and edit states
+- **Step Cards**: Individual cards with edit mode, save/cancel controls, edited indicators
+- **Critique Modal**: Dedicated modal for reviewing and accepting/rejecting critique feedback
+- **Status Badges**: Visual indicators (Pending, Processing, Complete, Editing, Edited)
 
 ## Getting Started
 
@@ -71,13 +76,14 @@ document-agent-web/
 ├── src/
 │   ├── components/          # React components
 │   │   ├── ControlPanel.jsx    # Input and execution controls
-│   │   ├── OutputViewer.jsx    # All steps viewer
-│   │   └── StepCard.jsx        # Individual step display
+│   │   ├── OutputViewer.jsx    # All steps viewer with edit props
+│   │   ├── StepCard.jsx        # Individual step with edit mode
+│   │   └── CritiqueModal.jsx   # Critique accept/reject modal
 │   ├── services/            # API services
 │   │   └── api.js             # API client with mock responses
 │   ├── utils/               # Utilities
 │   │   └── steps.js           # Step configuration
-│   ├── App.jsx              # Main application component
+│   ├── App.jsx              # Main application with edit state
 │   ├── main.jsx             # Application entry point
 │   └── index.css            # Global styles (Tailwind)
 ├── public/                  # Static assets
@@ -95,10 +101,30 @@ The application uses React's `useState` hook to manage:
 | State Variable | Type | Purpose |
 |---------------|------|---------|
 | `initialPrompt` | string | User's initial document description |
-| `results` | object | Stores all agent outputs by step |
+| `results` | object | Stores original AI outputs by step |
+| `editedResults` | object | Stores user-edited versions of outputs |
 | `currentStepIndex` | number | Tracks active workflow step (0-5) |
 | `isLoading` | boolean | Loading state for API calls |
 | `error` | string | Error messages from API or app |
+| `editingStep` | string | Which step is currently being edited |
+| `savedSteps` | Set | Which steps have saved edits |
+| `showCritiqueModal` | boolean | Controls critique modal visibility |
+| `critiqueAccepted` | boolean/null | User's critique decision (accept/reject/pending) |
+| `versionHistory` | array | Tracks all edits and changes for document evolution |
+
+### Edit Workflow
+
+1. User completes a step → AI generates output → Stored in `results`
+2. User clicks "Edit" → Step enters edit mode → `editingStep` updated
+3. User modifies content → Changes stored in `editedResults`
+4. User clicks "Save" → Edit marked as saved in `savedSteps` → Can proceed to next step
+5. User clicks "Cancel" → Unsaved changes discarded → Returns to view mode
+
+**Critique Special Handling:**
+- Critique step is not editable (read-only)
+- Modal appears with Accept/Reject buttons
+- Decision stored in `critiqueAccepted`
+- Accepted critiques applied in finalization step
 
 ## API Integration
 
@@ -316,14 +342,17 @@ Check console for errors and verify `USE_MOCK_API = true` in `src/services/api.j
 
 ## Future Enhancements
 
+- [x] ~~Document version history~~ **✅ Implemented in v2.0.0**
+- [x] ~~Editable outputs~~ **✅ Implemented in v2.0.0**
 - [ ] Real-time collaboration (multiple users)
-- [ ] Document version history
 - [ ] Export to multiple formats (PDF, DOCX)
 - [ ] Template library (pre-built document types)
 - [ ] AI suggestions during prompt input
 - [ ] Cost estimation for API usage
-- [ ] Document comparison (draft vs. final)
+- [ ] Visual diff viewer (original AI vs. edited)
 - [ ] Share links for completed documents
+- [ ] Undo/redo for edits
+- [ ] Auto-save drafts to localStorage
 
 ## Contributing
 
@@ -339,8 +368,18 @@ For issues, questions, or feature requests, please open an issue on the main pro
 
 ---
 
-**Version:** 1.0.0
-**Last Updated:** 2025-11-15
+**Version:** 2.0.0 - Editable Workflow Edition
+**Last Updated:** 2025-11-16
 **Status:** Production Ready
 
 Built with ⚡ Vite + ⚛️ React + 🎨 Tailwind CSS
+
+### What's New in v2.0.0
+
+- ✨ **Full Edit Mode**: Edit and refine AI outputs at every step
+- 📝 **Save/Cancel Controls**: Review changes before committing
+- 🔍 **Critique Modal**: Accept or reject feedback via dedicated interface
+- 📊 **Version History**: Track all edits throughout document evolution
+- ⚠️ **Save Validation**: Enforced saving before proceeding to next step
+- 🎨 **Edit Indicators**: Visual badges showing edited content
+- 🔒 **Edit Locking**: Only one step editable at a time for clarity
