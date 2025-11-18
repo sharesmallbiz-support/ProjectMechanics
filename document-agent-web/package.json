@@ -1,21 +1,27 @@
 {
-  "name": "document-agent-web",
-  "version": "2.0.0",
-  "description": "React frontend for Business Document Agent with Editable Workflow (Prompt Spark Client)",
+  "name": "project-mechanics",
+  "version": "3.0.0",
+  "description": "Unified Project Mechanics site: Methodology + Document Agent Tool",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-sitemap.js",
     "preview": "vite preview",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "generate-sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
+    "@mdx-js/rollup": "^3.1.1",
     "@radix-ui/react-slot": "^1.2.4",
     "@types/node": "^24.10.1",
+    "gray-matter": "^4.0.3",
     "jsdom": "^27.2.0",
     "lucide-react": "^0.553.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.2",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
