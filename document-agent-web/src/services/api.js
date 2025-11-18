@@ -6,9 +6,14 @@
  */
 
 // Configuration
-const USE_MOCK_API = true; // Set to false when connecting to real API
+const USE_MOCK_API = false; // Set to false when connecting to real API
 const MOCK_DELAY = 1500; // Simulated API delay in milliseconds
-const API_BASE_URL = '/api/v1/document'; // Future real API endpoint
+const API_BASE_URL = 'http://localhost:8000/api/v1'; // Real API endpoint
+const API_KEY = 'demo-api-key'; // Demo API key - replace with your actual key
+
+// Token management
+let accessToken = localStorage.getItem('accessToken');
+let refreshToken = localStorage.getItem('refreshToken');
 
 // Mock response data for each step
 const mockResponses = {
@@ -1055,27 +1060,113 @@ function extractTopic(prompt) {
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 /**
- * Mock API call to generate a step
- * @param {string} stepId - The step identifier (SPECIFY, PLAN, DRAFT, CRITIQUE, FINALIZE)
- * @param {object} inputs - Required inputs for the step
- * @returns {Promise<object>} - The step output
+ * Authenticate and get access token
  */
-export async function generateStep(stepId, inputs) {
-  if (!USE_MOCK_API) {
-    // Real API call would go here
-    const response = await fetch(`${API_BASE_URL}/generate-step`, {
+async function authenticate() {
+  console.log('[API] Authenticating...');
+  try {
+    const response = await fetch(`${API_BASE_URL}/auth/token`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ stepId, inputs })
+      body: JSON.stringify({ apiKey: API_KEY })
     });
 
     if (!response.ok) {
-      throw new Error(`API Error: ${response.statusText}`);
+      throw new Error(`Authentication failed: ${response.statusText}`);
     }
 
-    return await response.json();
+    const data = await response.json();
+    accessToken = data.accessToken;
+    refreshToken = data.refreshToken;
+
+    // Store tokens in localStorage
+    localStorage.setItem('accessToken', accessToken);
+    localStorage.setItem('refreshToken', refreshToken);
+
+    console.log('[API] Authentication successful');
+    return true;
+  } catch (error) {
+    console.error('[API] Authentication error:', error);
+    throw error;
+  }
+}
+
+/**
+ * Make an authenticated API call
+ */
+async function authenticatedFetch(url, options = {}) {
+  // Ensure we have a token
+  if (!accessToken) {
+    await authenticate();
+  }
+
+  // Add authorization header
+  const headers = {
+    'Content-Type': 'application/json',
+    ...options.headers,
+    'Authorization': `Bearer ${accessToken}`
+  };
+
+  try {
+    const response = await fetch(url, { ...options, headers });
+
+    // Handle 401 - token expired, try to refresh
+    if (response.status === 401) {
+      console.log('[API] Token expired, re-authenticating...');
+      await authenticate();
+
+      // Retry with new token
+      headers['Authorization'] = `Bearer ${accessToken}`;
+      return await fetch(url, { ...options, headers });
+    }
+
+    return response;
+  } catch (error) {
+    console.error('[API] Request error:', error);
+    throw error;
+  }
+}
+
+/**
+ * Mock API call to generate a step
+ * @param {string} stepId - The step identifier (SPECIFY, PLAN, DRAFT, CRITIQUE, FINALIZE)
+ * @param {object} inputs - Required inputs for the step
+ * @param {object} options - Generation options (temperature, maxTokens, model)
+ * @returns {Promise<object>} - The step output
+ */
+export async function generateStep(stepId, inputs, options = {}) {
+  if (!USE_MOCK_API) {
+    // Real API call
+    console.log(`[API] Generating step: ${stepId}`, inputs);
+
+    try {
+      const response = await authenticatedFetch(`${API_BASE_URL}/document/generate-step`, {
+        method: 'POST',
+        body: JSON.stringify({
+          stepId,
+          inputs,
+          options: {
+            temperature: options.temperature || 0.7,
+            maxTokens: options.maxTokens || 4000,
+            model: options.model || 'gpt-4'
+          }
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error?.message || `API Error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log(`[API] Generated step ${stepId}:`, data);
+      return data;
+    } catch (error) {
+      console.error(`[API] Error generating step ${stepId}:`, error);
+      throw error;
+    }
   }
 
   // Mock implementation
@@ -1111,8 +1202,18 @@ export async function generateStep(stepId, inputs) {
  */
 export async function checkHealth() {
   if (!USE_MOCK_API) {
-    const response = await fetch(`${API_BASE_URL}/health`);
-    return await response.json();
+    try {
+      const response = await fetch(`${API_BASE_URL}/health`);
+      const data = await response.json();
+      return { ...data, mode: 'real' };
+    } catch (error) {
+      console.error('[API] Health check failed:', error);
+      return {
+        status: 'unhealthy',
+        mode: 'real',
+        error: error.message
+      };
+    }
   }
 
   await delay(200);
