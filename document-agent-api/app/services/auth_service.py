@@ -1,7 +1,7 @@
 """
 Authentication service for JWT token generation and validation
 """
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional, Dict
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -68,13 +68,13 @@ class AuthService:
         to_encode = data.copy()
 
         if expires_delta:
-            expire = datetime.utcnow() + expires_delta
+            expire = datetime.now(timezone.utc) + expires_delta
         else:
-            expire = datetime.utcnow() + timedelta(minutes=self.access_token_expire_minutes)
+            expire = datetime.now(timezone.utc) + timedelta(minutes=self.access_token_expire_minutes)
 
         to_encode.update({
             "exp": expire,
-            "iat": datetime.utcnow(),
+            "iat": datetime.now(timezone.utc),
             "type": "access"
         })
 
@@ -92,11 +92,11 @@ class AuthService:
             Encoded JWT refresh token
         """
         to_encode = data.copy()
-        expire = datetime.utcnow() + timedelta(days=self.refresh_token_expire_days)
+        expire = datetime.now(timezone.utc) + timedelta(days=self.refresh_token_expire_days)
 
         to_encode.update({
             "exp": expire,
-            "iat": datetime.utcnow(),
+            "iat": datetime.now(timezone.utc),
             "type": "refresh"
         })
 
@@ -123,7 +123,7 @@ class AuthService:
 
             # Check expiration
             exp = payload.get("exp")
-            if exp and datetime.fromtimestamp(exp) < datetime.utcnow():
+            if exp and datetime.fromtimestamp(exp, tz=timezone.utc) < datetime.now(timezone.utc):
                 return None
 
             return payload
@@ -159,6 +159,7 @@ class AuthService:
 
 # Global instance
 _auth_service_instance: Optional[AuthService] = None
+_auth_service_secret_key: Optional[str] = None
 
 
 def get_auth_service(secret_key: Optional[str] = None) -> AuthService:
@@ -166,18 +167,24 @@ def get_auth_service(secret_key: Optional[str] = None) -> AuthService:
     Get the global auth service instance
 
     Args:
-        secret_key: Secret key for JWT (required on first call)
+        secret_key: Secret key for JWT (first call sets the key)
 
     Returns:
         AuthService instance
     """
-    global _auth_service_instance
+    global _auth_service_instance, _auth_service_secret_key
+    
+    # Store the secret key on first call
+    if secret_key is not None:
+        _auth_service_secret_key = secret_key
+    
+    # Create instance if needed
     if _auth_service_instance is None:
-        if secret_key is None:
-            # Generate a random key for development
-            secret_key = secrets.token_urlsafe(32)
-            print("⚠️  Warning: Using auto-generated secret key. Set JWT_SECRET_KEY in production!")
-
-        _auth_service_instance = AuthService(secret_key=secret_key)
+        if _auth_service_secret_key is None:
+            # Fallback: use a default key (should not happen in production)
+            _auth_service_secret_key = "change-me-in-production-default-key-min-32-chars"
+            print("⚠️  Warning: Using default secret key. Set JWT_SECRET_KEY in .env!")
+            
+        _auth_service_instance = AuthService(secret_key=_auth_service_secret_key)
 
     return _auth_service_instance

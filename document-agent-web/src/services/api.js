@@ -6,7 +6,7 @@
  */
 
 // Configuration
-const USE_MOCK_API = false; // Set to false when connecting to real API
+const USE_MOCK_API = true; // Set to false when connecting to real API with valid OpenAI/Anthropic keys
 const MOCK_DELAY = 1500; // Simulated API delay in milliseconds
 const API_BASE_URL = 'http://localhost:8000/api/v1'; // Real API endpoint
 const API_KEY = 'demo-api-key'; // Demo API key - replace with your actual key

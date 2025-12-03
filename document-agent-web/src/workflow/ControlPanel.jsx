@@ -4,7 +4,7 @@ import { Play, Loader2, AlertCircle, CheckCircle, Save } from 'lucide-react';
 function ControlPanel({
   initialPrompt,
   setInitialPrompt,
-  currentStep,
+  currentStep = { index: 0, title: '', buttonLabel: 'Run Step' }, // Default value
   isLoading,
   error,
   onRunStep,
